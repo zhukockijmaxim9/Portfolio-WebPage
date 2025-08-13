@@ -1,5 +1,5 @@
 .className {
-  height: 100vh;
+  height: 200vh;
 }
 
 .main-page {
@@ -18,12 +18,15 @@
 }
 
 .main-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   font-family: "Montserrat", sans-serif;
   margin-top: 25vh;
   width: fit-content;
+}
+.main-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   cursor: pointer;
 }
 .info-container {
@@ -54,4 +57,15 @@
   margin: 0;
   font-size: 96px;
   font-weight: 700;
+}
+
+.more-about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.more-about p {
+  font-size: 20px;
+  margin-bottom: 5%;
 }

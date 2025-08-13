@@ -14,17 +14,12 @@ const MainElement = () => {
       }
       return randoms.trim();
     };
-    const getBordersCircle = () => {
-      let randoms = "";
-      for (let i = 0; i < 4; i++) {
-        randoms += `${getRandomRadius(50, 90)} `;
-      }
-      return randoms.trim();
-    };
 
     const interval = setInterval(() => {
       shapesRef.current.forEach((shape) => {
-        if (shape) shape.style.borderRadius = getBorders();
+        if (shape) {
+          shape.style.borderRadius = getBorders();
+        }
       });
     }, 4000);
 
@@ -36,7 +31,6 @@ const MainElement = () => {
       <div className="shape1" ref={(el) => (shapesRef.current[0] = el)} />
       <div className="shape2" ref={(el) => (shapesRef.current[1] = el)} />
       <div className="shape3" ref={(el) => (shapesRef.current[2] = el)} />
-      <div className="shape-circle" ref={(el) => (shapesRef.current[3] = el)} />
     </div>
   );
 };
