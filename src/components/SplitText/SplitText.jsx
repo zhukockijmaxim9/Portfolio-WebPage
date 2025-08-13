@@ -6,7 +6,7 @@ import { SplitText as GSAPSplitText } from "gsap/SplitText";
 gsap.registerPlugin(ScrollTrigger, GSAPSplitText);
 
 const SplitText = ({
-  text,
+  children,
   className = "",
   delay = 100,
   duration = 0.6,
@@ -24,10 +24,9 @@ const SplitText = ({
   const scrollTriggerRef = useRef(null);
 
   useEffect(() => {
-    if (typeof window === "undefined" || !ref.current || !text) return;
+    if (typeof window === "undefined" || !ref.current || !children) return;
 
     const el = ref.current;
-
     animationCompletedRef.current = false;
 
     const absoluteLines = splitType === "lines";
@@ -119,10 +118,10 @@ const SplitText = ({
         splitter.revert();
       }
     };
-  }, [text, delay, duration, ease, splitType, from, to, threshold, rootMargin, onLetterAnimationComplete]);
+  }, [children, delay, duration, ease, splitType, from, to, threshold, rootMargin, onLetterAnimationComplete]);
 
   return (
-    <p
+    <div
       ref={ref}
       className={`split-parent ${className}`}
       style={{
@@ -133,8 +132,8 @@ const SplitText = ({
         wordWrap: "break-word",
       }}
     >
-      {text}
-    </p>
+      {children}
+    </div>
   );
 };
 
