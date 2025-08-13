@@ -1,0 +1,57 @@
+.className {
+  height: 100vh;
+}
+
+.main-page {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 110vh;
+  z-index: -1;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 25vh;
+  width: fit-content;
+  cursor: pointer;
+}
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 48px;
+  width: fit-content;
+  height: auto;
+}
+.full-stack-info {
+  display: flex;
+  justify-content: center;
+}
+
+.info-text {
+  width: fit-content;
+  margin: 0;
+}
+.full-stack-text {
+  font-weight: 700;
+  margin: 0;
+}
+.developer {
+  margin: 0 0 0 15px;
+}
+.hello-text {
+  margin: 0;
+  font-size: 96px;
+  font-weight: 700;
+}
