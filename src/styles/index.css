@@ -10,4 +10,31 @@ body {
   background-color: rgba(4, 13, 31, 1);
   color: aliceblue;
   margin: 0;
+  overflow-x: hidden;
+}
+
+/* Общая ширина скроллбара */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Дорожка скроллбара (фон) */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05); /* почти прозрачный фон */
+  backdrop-filter: blur(10px); /* стеклянное размытие */
+  border-radius: 10px;
+}
+
+/* Бегунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3); /* полупрозрачный белый */
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4); /* тонкая стеклянная рамка */
+  transition: background 0.3s ease;
+}
+
+/* При наведении на бегунок */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
 }

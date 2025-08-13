@@ -11,7 +11,7 @@ function Navigation() {
         Главная
       </Link>
       <Link to="/contact" className="link">
-        Связаться со мной
+        Контакты
       </Link>
     </nav>
   );

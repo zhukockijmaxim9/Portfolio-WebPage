@@ -12,24 +12,41 @@ const MainPage = () => {
   return (
     <div className="main-page">
       <div className="background">
-        <Silk className="background" speed={5} scale={1} color="#4a85d8ff" noiseIntensity={1.5} rotation={0} />
+        <Silk className="background" speed={6} scale={1} color="#4a85d8ff" noiseIntensity={1.5} rotation={0} />
       </div>
       <section className="main-container">
-        <SplitText splitType="words" delay={250}>
-          <h1 className="hello-text">Привет!</h1>
-          <div className="info-container">
-            <h2 className="info-text">Я Жукоцкий Максим</h2>
-            <div className="full-stack-info">
-              <span className="full-stack-text">Full Stack</span>
-              <span className="developer">разработчик</span>
-            </div>
-          </div>
-        </SplitText>
-        <SplitText splitType="chars" delay={100}></SplitText>
-        <div className="more-about">
-          <p>Давайте познокомимся поближе</p>
-          {/* <Circle className="circle-button" /> */}
-        </div>
+        <SplitText
+          className="main-info"
+          steps={[
+            {
+              content: <h1 className="hello-text">Привет!</h1>,
+              splitType: "chars",
+              delay: 120,
+            },
+            {
+              content: (
+                <div className="info-container">
+                  <h2 className="info-text">Я Жукоцкий Максим</h2>
+                  <div className="full-stack-info">
+                    <span className="full-stack-text">Full Stack</span>
+                    <span className="developer">разработчик</span>
+                  </div>
+                </div>
+              ),
+              splitType: "words",
+              delay: 100,
+            },
+            {
+              content: (
+                <div className="more-about">
+                  <p>Давайте познакомимся поближе</p>
+                </div>
+              ),
+              splitType: "lines",
+              delay: 120,
+            },
+          ]}
+        />
       </section>
       <div className="className" />
     </div>

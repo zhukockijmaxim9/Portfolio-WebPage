@@ -1,138 +1,169 @@
-import { useRef, useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText as GSAPSplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(ScrollTrigger, GSAPSplitText);
+// Регистрируем именно плагин GSAP, а не наш React-компонент
+gsap.registerPlugin(GSAPSplitText);
 
+/**
+ * Компонент для последовательной анимации разных блоков с разными режимами разбиения.
+ *
+ * props:
+ * - steps: Array<{
+ *     content: ReactNode,          // любой JSX
+ *     splitType?: "chars"|"words"|"lines",
+ *     delay?: number,              // задержка между элементами шага, мс (как у тебя раньше)
+ *     from?: gsap.TweenVars,       // стартовые стили (по умолчанию { opacity: 0, y: 40 })
+ *     to?: gsap.TweenVars,         // конечные стили (по умолчанию { opacity: 1, y: 0 })
+ *     className?: string,          // опционально: класс для обертки шага
+ *     onStepComplete?: (index)=>void // колбэк по завершении конкретного шага
+ *   }>
+ * - duration?: number (сек) — длительность анимации элементов внутри шага
+ * - ease?: string — функция сглаживания
+ * - textAlign?: CSS — выравнивание контейнера
+ * - onComplete?: ()=>void — общий колбэк по завершении всей последовательности
+ * - className?: string — класс корневого контейнера
+ */
 const SplitText = ({
-  children,
-  className = "",
-  delay = 100,
+  steps = [],
   duration = 0.6,
   ease = "power3.out",
-  splitType = "chars",
-  from = { opacity: 0, y: 40 },
-  to = { opacity: 1, y: 0 },
-  threshold = 0.1,
-  rootMargin = "-100px",
   textAlign = "center",
-  onLetterAnimationComplete,
+  onComplete,
+  className = "",
 }) => {
-  const ref = useRef(null);
-  const animationCompletedRef = useRef(false);
-  const scrollTriggerRef = useRef(null);
+  const containerRef = useRef(null);
+  const timelineRef = useRef(null);
 
   useEffect(() => {
-    if (typeof window === "undefined" || !ref.current || !children) return;
+    if (typeof window === "undefined" || !containerRef.current || steps.length === 0) return;
 
-    const el = ref.current;
-    animationCompletedRef.current = false;
-
-    const absoluteLines = splitType === "lines";
-    if (absoluteLines) el.style.position = "relative";
-
-    let splitter;
-    try {
-      splitter = new GSAPSplitText(el, {
-        type: splitType,
-        absolute: absoluteLines,
-        linesClass: "split-line",
-      });
-    } catch (error) {
-      console.error("Failed to create SplitText:", error);
-      return;
-    }
-
-    let targets;
-    switch (splitType) {
-      case "lines":
-        targets = splitter.lines;
-        break;
-      case "words":
-        targets = splitter.words;
-        break;
-      case "chars":
-        targets = splitter.chars;
-        break;
-      default:
-        targets = splitter.chars;
-    }
-
-    if (!targets || targets.length === 0) {
-      console.warn("No targets found for SplitText animation");
-      splitter.revert();
-      return;
-    }
-
-    targets.forEach((t) => {
-      t.style.willChange = "transform, opacity";
-    });
-
-    const startPct = (1 - threshold) * 100;
-    const marginMatch = /^(-?\d+(?:\.\d+)?)(px|em|rem|%)?$/.exec(rootMargin);
-    const marginValue = marginMatch ? parseFloat(marginMatch[1]) : 0;
-    const marginUnit = marginMatch ? marginMatch[2] || "px" : "px";
-    const sign = marginValue < 0 ? `-=${Math.abs(marginValue)}${marginUnit}` : `+=${marginValue}${marginUnit}`;
-    const start = `top ${startPct}%${sign}`;
-
+    const container = containerRef.current;
     const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: el,
-        start,
-        toggleActions: "play none none none",
-        once: true,
-        onToggle: (self) => {
-          scrollTriggerRef.current = self;
-        },
-      },
       smoothChildTiming: true,
       onComplete: () => {
-        animationCompletedRef.current = true;
-        gsap.set(targets, {
-          ...to,
-          clearProps: "willChange",
-          immediateRender: true,
-        });
-        onLetterAnimationComplete?.();
+        onComplete?.();
       },
     });
+    timelineRef.current = tl;
 
-    tl.set(targets, { ...from, immediateRender: false, force3D: true });
-    tl.to(targets, {
-      ...to,
-      duration,
-      ease,
-      stagger: delay / 1000,
-      force3D: true,
+    const splitInstances = [];
+    const allTargets = [];
+
+    steps.forEach((step, index) => {
+      const {
+        splitType = "chars",
+        delay = 100,
+        from = { opacity: 0, y: 40 },
+        to = { opacity: 1, y: 0 },
+        onStepComplete,
+      } = step;
+
+      // Берем DOM-элемент шага
+      const stepEl = container.querySelector(`[data-step="${index}"]`);
+      if (!stepEl) return;
+
+      // Для строк лучше абсолютная верстка, чтобы не прыгала высота
+      const absoluteLines = splitType === "lines";
+      if (absoluteLines) {
+        stepEl.style.position = "relative";
+      }
+
+      // Создаем SplitText для конкретного шага
+      let splitter;
+      try {
+        splitter = new GSAPSplitText(stepEl, {
+          type: splitType, // 'chars' | 'words' | 'lines'
+          absolute: absoluteLines,
+          linesClass: "split-line",
+        });
+      } catch (err) {
+        // Если что-то пошло не так с плагином, не роняем всё
+        // и просто пропускаем этот шаг
+        // eslint-disable-next-line no-console
+        console.error("GSAP SplitText error:", err);
+        return;
+      }
+
+      splitInstances.push(splitter);
+
+      // Определяем цели
+      let targets;
+      switch (splitType) {
+        case "lines":
+          targets = splitter.lines;
+          break;
+        case "words":
+          targets = splitter.words;
+          break;
+        case "chars":
+        default:
+          targets = splitter.chars;
+      }
+
+      if (!targets || targets.length === 0) {
+        // На всякий случай чистим и выходим из шага
+        splitter.revert();
+        return;
+      }
+
+      // Немного производительности
+      targets.forEach((t) => {
+        t.style.willChange = "transform, opacity";
+      });
+      allTargets.push(...targets);
+
+      // Последовательность: сначала выставляем from, затем to со stagger
+      tl.set(targets, { ...from, immediateRender: false, force3D: true });
+      tl.set(targets, { ...from, opacity: 0, immediateRender: true });
+
+      tl.to(
+        targets,
+        {
+          ...to,
+          duration,
+          ease,
+          stagger: delay / 1000, // как у тебя было — delay в миллисекундах
+          force3D: true,
+          onComplete: () => {
+            // Снимаем will-change у этого шага
+            targets.forEach((t) => {
+              t.style.willChange = "";
+            });
+            onStepComplete?.(index);
+          },
+        },
+        ">" // строго после предыдущего шага
+      );
     });
 
+    // Очистка при размонтировании/перерендере
     return () => {
-      tl.kill();
-      if (scrollTriggerRef.current) {
-        scrollTriggerRef.current.kill();
-        scrollTriggerRef.current = null;
+      try {
+        tl.kill();
+      } catch {}
+      if (allTargets.length) {
+        gsap.killTweensOf(allTargets);
       }
-      gsap.killTweensOf(targets);
-      if (splitter) {
-        splitter.revert();
-      }
+      splitInstances.forEach((inst) => {
+        try {
+          inst.revert();
+        } catch {}
+      });
     };
-  }, [children, delay, duration, ease, splitType, from, to, threshold, rootMargin, onLetterAnimationComplete]);
+  }, [steps, duration, ease, onComplete]);
 
   return (
     <div
-      ref={ref}
-      className={`split-parent ${className}`}
-      style={{
-        textAlign,
-        overflow: "hidden",
-        display: "inline-block",
-        whiteSpace: "normal",
-        wordWrap: "break-word",
-      }}
+      ref={containerRef}
+      className={className ? `splittext-root ${className}` : "splittext-root"}
+      style={{ textAlign }}
     >
-      {children}
+      {steps.map((step, i) => (
+        <div key={i} data-step={i} className={step.className} style={{ display: "inline-block", overflow: "hidden" }}>
+          {step.content}
+        </div>
+      ))}
     </div>
   );
 };
