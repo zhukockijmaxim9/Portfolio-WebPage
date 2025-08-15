@@ -1,4 +1,4 @@
-import Particles from "../components/Particles/Particles";
+import Particles from "../HelpComponents/Particles/Particles";
 
 const ParticlesPage = () => {
   return (
