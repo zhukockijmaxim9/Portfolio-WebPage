@@ -1,7 +1,6 @@
 import "./MainSplitText.css";
 import SplitText from "../../HelpComponents/SplitText/SplitText";
 import ShinyText from "../../HelpComponents/ShinyText/ShinyText";
-import FadeContent from "../../HelpComponents/Fade/FadeContent";
 
 const MainSplitText = () => {
   return (
@@ -62,10 +61,6 @@ const MainSplitText = () => {
           },
         ]}
       />
-      <FadeContent blur={true} duration={2000} easing="ease-out" initialOpacity={0} delay={3000} className="buttons">
-        <button className="projects-button">Мои проекты</button>
-        <button className="bio-button">Обо мне</button>
-      </FadeContent>
     </section>
   );
 };

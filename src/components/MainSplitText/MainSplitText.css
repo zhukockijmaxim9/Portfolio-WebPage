@@ -20,11 +20,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 48px;
+  font-size: 3rem;
   width: fit-content;
   height: auto;
   cursor: default;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 .full-stack-info {
   display: flex;
@@ -44,7 +44,7 @@
 }
 .hello-text {
   margin: 0;
-  font-size: 96px;
+  font-size: 6rem;
   font-weight: 700;
   cursor: default;
 }
@@ -55,8 +55,8 @@
   align-items: center;
 }
 .more-about p {
-  font-size: 20px;
-  margin-bottom: 20px;
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 @media (max-width: 992px) {
@@ -68,6 +68,6 @@
 }
 @media (max-width: 576px) {
   .main-container {
-    margin-top: 20vh;
+    margin-top: 12vh;
   }
 }

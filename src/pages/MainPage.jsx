@@ -1,6 +1,7 @@
 import "../styles/pagesStyle/Main.css";
 import Particles from "../HelpComponents/Particles/Particles";
 import MainSplitText from "../components/MainSplitText/MainSplitText";
+import Buttons from "../components/Button/Buttons";
 
 const MainPage = () => {
   return (
@@ -16,6 +17,7 @@ const MainPage = () => {
         disableRotation={false}
       />
       <MainSplitText />
+      <Buttons />
       <div className="className" />
     </div>
   );
