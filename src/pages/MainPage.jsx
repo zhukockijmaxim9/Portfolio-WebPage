@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "../styles/pagesStyle/Main.css";
+import "../styles/pagesStyle/Main.scss";
 import Particles from "../HelpComponents/Particles/Particles";
 
 const stackCards = [
@@ -10,36 +10,36 @@ const stackCards = [
       { name: "JavaScript", level: "Использую регулярно" },
       { name: "HTML / CSS", level: "Использую регулярно" },
       { name: "SPA", level: "Коммерческий проект" },
-      { name: "REST API integration", level: "Коммерческий проект" },
+      { name: "REST API", level: "Интеграции в проде" },
     ],
   },
   {
     title: "AI & Automation",
     items: [
-      { name: "Python", level: "Pet project" },
-      { name: "Computer Vision", level: "Pet project" },
+      { name: "Python", level: "Pet + интеграции" },
+      { name: "Computer Vision", level: "Реальные прототипы" },
       { name: "CNN", level: "Pet project" },
       { name: "LLM integration", level: "Активно развиваю" },
       { name: "n8n", level: "Использую регулярно" },
-      { name: "AI workflows", level: "Активно развиваю" },
+      { name: "AI workflows", level: "Сквозные процессы" },
     ],
   },
   {
     title: "Backend",
     items: [
-      { name: "Go", level: "Коммерческий проект" },
-      { name: "Node.js", level: "Использую регулярно" },
-      { name: "JWT", level: "Коммерческий проект" },
-      { name: "gRPC", level: "Pet project" },
-      { name: "PostgreSQL", level: "Коммерческий проект" },
+      { name: "Go", level: "Microservices" },
+      { name: "Node.js", level: "Интеграционный слой" },
+      { name: "JWT", level: "Auth flow" },
+      { name: "gRPC", level: "Сервисная коммуникация" },
+      { name: "PostgreSQL", level: "Production storage" },
     ],
   },
   {
     title: "Tools",
     items: [
-      { name: "Git", level: "Использую регулярно" },
-      { name: "Figma", level: "Использую регулярно" },
-      { name: "Docker", level: "Использую регулярно" },
+      { name: "Git", level: "Ежедневно" },
+      { name: "Figma", level: "UI-проработка" },
+      { name: "Docker", level: "Локальные контуры" },
     ],
   },
 ];
@@ -47,8 +47,9 @@ const stackCards = [
 const projects = [
   {
     title: "React + Microservices Forum",
+    badge: "Fullstack product",
     points: [
-      "SPA на React с продуманной структурой экранов",
+      "SPA на React с акцентом на UX и архитектуру интерфейса",
       "JWT-авторизация и защищенные пользовательские сценарии",
       "Интеграция с Go-backend через REST API",
       "WebSocket-чат в реальном времени",
@@ -56,35 +57,37 @@ const projects = [
   },
   {
     title: "Face Recognition System",
+    badge: "AI integration",
     points: [
-      "Python + OpenCV для распознавания лиц",
+      "Python + OpenCV для распознавания в потоке",
       "Сохранение embeddings в PostgreSQL",
-      "Обработка потока в реальном времени",
-      "Отображение распознанного имени на frontend",
+      "Реальное время и надежный пайплайн обработки",
+      "Отображение имени на frontend-интерфейсе",
     ],
   },
   {
     title: "Классификация кухонных принадлежностей",
+    badge: "Computer Vision",
     points: [
-      "CNN-модель для классификации категорий объектов",
+      "CNN-модель с расчетом accuracy и анализом ошибок",
       "Собранный и размеченный dataset",
-      "Метрика accuracy и анализ качества предсказаний",
-      "Потенциальное применение: e-commerce, склад, автоматизация",
+      "Ориентация на прикладной use-case, а не только на метрику",
+      "Потенциал: e-commerce, складские системы, автоматизация",
     ],
   },
 ];
 
 const workflowSteps = [
-  "Проектирую frontend-архитектуру и структуру UI",
-  "Думаю о UX, чтобы интерфейс оставался понятным",
-  "Строю масштабируемый backend при необходимости",
-  "Разделяю ответственность и придерживаюсь clean architecture",
-  "Пишу чистый и поддерживаемый код",
+  "Проектирую frontend-архитектуру до начала кодинга",
+  "Принимаю UX-решения на основе сценариев пользователя",
+  "Подключаю backend и AI-сервисы как целостную систему",
+  "Разделяю ответственность компонентов и сервисов",
+  "Поддерживаю чистоту кода и прогнозируемость развития проекта",
 ];
 
 const MainPage = () => {
   useEffect(() => {
-    const elements = document.querySelectorAll("[data-reveal]");
+    const elements = document.querySelectorAll("[data-animate]");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -95,8 +98,8 @@ const MainPage = () => {
         });
       },
       {
-        threshold: 0.2,
-        rootMargin: "0px 0px -10% 0px",
+        threshold: 0.18,
+        rootMargin: "0px 0px -8% 0px",
       }
     );
 
@@ -106,65 +109,86 @@ const MainPage = () => {
   }, []);
 
   return (
-    <div className="main-page">
-      <section className="hero-section" id="top">
+    <div className="portfolio-page">
+      <section className="hero" id="home">
         <Particles
           className="hero-particles"
-          particleColors={["#63f4ff", "#9ec6ff", "#ffffff"]}
-          particleCount={220}
-          particleSpread={10}
-          speed={0.1}
+          particleColors={["#6ce3ff", "#8db3ff", "#f4f7ff"]}
+          particleCount={260}
+          particleSpread={11}
+          speed={0.09}
           particleBaseSize={110}
           moveParticlesOnHover={true}
           alphaParticles={false}
           disableRotation={false}
         />
-        <div className="hero-gradient" />
-        <div className="hero-content reveal is-visible">
-          <p className="hero-kicker">React Developer | AI Automation</p>
-          <h1 className="hero-title">Жукоцкий Максим</h1>
-          <p className="hero-subtitle">
+
+        <div className="hero-overlay" />
+
+        <nav className="glass-nav container">
+          <a href="#home" className="brand">
+            MZ
+          </a>
+          <div className="nav-links">
+            <a href="#about">Обо мне</a>
+            <a href="#stack">Стек</a>
+            <a href="#projects">Проекты</a>
+            <a href="#automation">AI</a>
+          </div>
+          <a href="#contact" className="nav-contact">
+            Связаться
+          </a>
+        </nav>
+
+        <div className="hero-content container reveal is-visible">
+          <p className="hero-role">React Developer | AI Automation</p>
+          <h1>Жукоцкий Максим</h1>
+          <p className="hero-description">
             Разрабатываю интерфейсы на React и интегрирую AI-системы в реальные продукты
           </p>
           <div className="hero-actions">
-            <a href="#projects" className="action-button action-button-primary">
+            <a href="#projects" className="btn btn-primary">
               Проекты
             </a>
-            <a href="https://github.com/your-username" className="action-button action-button-ghost">
+            <a href="https://github.com/your-username" className="btn btn-glass">
               GitHub
             </a>
-            <a href="#contact" className="action-button action-button-ghost">
+            <a href="#contact" className="btn btn-glass">
               Связаться
             </a>
           </div>
         </div>
       </section>
 
-      <main className="content-shell">
-        <section className="section-card reveal" data-reveal>
-          <h2 className="section-title">Обо мне как о разработчике</h2>
-          <p className="section-lead">
-            Специализируюсь на разработке SPA на React, проектирую удобные интерфейсы и
-            интегрирую backend и AI-сервисы в веб-приложения.
+      <main className="container main-content">
+        <section className="panel reveal" id="about" data-animate>
+          <h2>Обо мне как о разработчике</h2>
+          <p>
+            Специализируюсь на разработке SPA на React, проектирую понятные интерфейсы и
+            продумываю frontend-архитектуру. Интегрирую backend и AI-сервисы в веб-продукты,
+            чтобы система была цельной и рабочей в реальных сценариях.
           </p>
-          <ul className="list-grid">
+          <ul className="accent-list">
             <li>Люблю frontend и проектирование интерфейсов</li>
             <li>Имею backend-опыт: Go, microservices, JWT</li>
             <li>Развиваюсь в AI automation и AI-интеграциях</li>
           </ul>
         </section>
 
-        <section className="section-card reveal" data-reveal>
-          <h2 className="section-title">Технологический стек</h2>
+        <section className="panel reveal" id="stack" data-animate>
+          <div className="section-head">
+            <h2>Технологический стек</h2>
+            <span className="head-note">Приоритет: frontend + AI integration</span>
+          </div>
           <div className="stack-grid">
             {stackCards.map((card) => (
               <article key={card.title} className="stack-card">
                 <h3>{card.title}</h3>
-                <div className="tech-tags">
+                <div className="stack-items">
                   {card.items.map((item) => (
-                    <span key={item.name} className="tech-tag" title={item.level}>
-                      <span className="tech-name">{item.name}</span>
-                      <span className="tech-level">{item.level}</span>
+                    <span className="skill-chip" key={item.name} title={item.level}>
+                      <span>{item.name}</span>
+                      <small>{item.level}</small>
                     </span>
                   ))}
                 </div>
@@ -173,11 +197,12 @@ const MainPage = () => {
           </div>
         </section>
 
-        <section className="section-card reveal" id="projects" data-reveal>
-          <h2 className="section-title">Проекты</h2>
-          <div className="project-grid">
+        <section className="panel reveal" id="projects" data-animate>
+          <h2>Проекты</h2>
+          <div className="projects-grid">
             {projects.map((project) => (
-              <article key={project.title} className="project-card">
+              <article className="project-card" key={project.title}>
+                <span className="project-badge">{project.badge}</span>
                 <h3>{project.title}</h3>
                 <ul>
                   {project.points.map((point) => (
@@ -189,31 +214,31 @@ const MainPage = () => {
           </div>
         </section>
 
-        <section className="section-card section-card-accent reveal" data-reveal>
-          <h2 className="section-title">AI Automation & Intelligent Systems</h2>
-          <ul className="list-grid">
-            <li>Разработка AI-ботов</li>
-            <li>Интеграция LLM в web-приложения</li>
-            <li>Автоматизация бизнес-процессов</li>
-            <li>Создание AI workflows</li>
-          </ul>
+        <section className="panel panel-accent reveal" id="automation" data-animate>
+          <h2>AI Automation & Intelligent Systems</h2>
+          <div className="automation-grid">
+            <span>Разработка AI-ботов</span>
+            <span>Интеграция LLM в web-приложения</span>
+            <span>Автоматизация бизнес-процессов</span>
+            <span>Создание AI workflows</span>
+          </div>
         </section>
 
-        <section className="section-card reveal" data-reveal>
-          <h2 className="section-title">Как я работаю</h2>
-          <ul className="workflow-list">
+        <section className="panel reveal" id="workflow" data-animate>
+          <h2>Как я работаю</h2>
+          <ol className="workflow-list">
             {workflowSteps.map((step) => (
               <li key={step}>{step}</li>
             ))}
-          </ul>
+          </ol>
         </section>
 
-        <section className="section-card reveal" id="contact" data-reveal>
-          <h2 className="section-title">Связаться</h2>
-          <p className="section-lead">
-            Открыт к задачам по React, интеграции AI в продукты и автоматизации процессов.
+        <section className="panel reveal" id="contact" data-animate>
+          <h2>Связаться</h2>
+          <p>
+            Открыт к задачам по React, AI-интеграциям и автоматизации процессов в веб-продуктах.
           </p>
-          <div className="contact-links">
+          <div className="contact-row">
             <a href="mailto:your.email@example.com">your.email@example.com</a>
             <a href="https://github.com/your-username">github.com/your-username</a>
           </div>

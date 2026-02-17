@@ -1,4 +1,4 @@
-import "./styles/App.css";
+import "./styles/App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import ParticlesPage from "./pages/Particles";

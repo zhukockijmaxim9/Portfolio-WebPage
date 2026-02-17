@@ -1,6 +1,6 @@
 import Button from "./Button";
 import FadeContent from "../../HelpComponents/Fade/FadeContent";
-import "./Buttons.css";
+import "./Buttons.scss";
 
 const Buttons = () => {
   return (

@@ -1,4 +1,4 @@
-import "./ShinyText.css";
+import "./ShinyText.scss";
 
 const ShinyText = ({ text, disabled = false, speed = 5, className = "" }) => {
   const animationDuration = `${speed}s`;

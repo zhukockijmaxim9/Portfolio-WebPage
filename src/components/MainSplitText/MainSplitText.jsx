@@ -1,4 +1,4 @@
-import "./MainSplitText.css";
+import "./MainSplitText.scss";
 import SplitText from "../../HelpComponents/SplitText/SplitText";
 import ShinyText from "../../HelpComponents/ShinyText/ShinyText";
 
