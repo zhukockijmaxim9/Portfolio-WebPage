@@ -1,51 +1,52 @@
+$split-border: rgba(120, 190, 255, 0.45);
+
 .main-container {
-  font-family: "Montserrat", sans-serif;
   width: fit-content;
+  font-family: "Montserrat", sans-serif;
+  border: 1px dashed $split-border;
+  border-radius: 12px;
+  padding: 0.5rem;
 }
+
 .main-info {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px dashed $split-border;
+  border-radius: 12px;
+  padding: 0.5rem;
 }
+
 .info-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 3rem;
   width: fit-content;
-  height: auto;
-  cursor: default;
   margin-bottom: 1.25rem;
+  border: 1px dashed $split-border;
+  border-radius: 12px;
+  padding: 0.5rem;
 }
+
 .full-stack-info {
   display: flex;
   justify-content: center;
+  gap: 0.5rem;
 }
 
-.info-text {
-  width: fit-content;
-  margin: 0;
-}
-.full-stack-text {
-  font-weight: 700;
-  margin: 0;
-}
-.developer {
-  margin: 0 0 0 15px;
-}
+.info-text,
+.full-stack-text,
+.developer,
 .hello-text {
   margin: 0;
-  font-size: 6rem;
-  font-weight: 700;
-  cursor: default;
 }
 
 .more-about {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.more-about p {
-  font-size: 1.25rem;
-  margin-bottom: 1.25rem;
+
+  p {
+    margin-bottom: 1.25rem;
+  }
 }

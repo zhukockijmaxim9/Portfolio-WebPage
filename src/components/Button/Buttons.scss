@@ -1,15 +1,16 @@
+$buttons-border: rgba(120, 190, 255, 0.45);
+
 .buttons {
   z-index: 11;
   display: flex;
   flex-direction: row;
   gap: 2rem;
   margin-top: 1rem;
+  border: 1px dashed $buttons-border;
+  border-radius: 12px;
+  padding: 0.5rem;
 }
 
-@media (max-width: 992px) {
-}
-@media (max-width: 768px) {
-}
 @media (max-width: 576px) {
   .buttons {
     flex-direction: column;
