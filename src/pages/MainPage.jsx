@@ -1,6 +1,7 @@
 import { useEffect } from "react";
+import Navigation from "../components/Navigation/Navigation";
 import "../styles/pagesStyle/Main.scss";
-import Particles from "../HelpComponents/Particles/Particles";
+import LightPillar from "../HelpComponents/Pillar/Pillar";
 
 const stackCards = [
   {
@@ -100,7 +101,7 @@ const MainPage = () => {
       {
         threshold: 0.18,
         rootMargin: "0px 0px -8% 0px",
-      }
+      },
     );
 
     elements.forEach((element) => observer.observe(element));
@@ -111,41 +112,33 @@ const MainPage = () => {
   return (
     <div className="portfolio-page">
       <section className="hero" id="home">
-        <Particles
-          className="hero-particles"
-          particleColors={["#6ce3ff", "#8db3ff", "#f4f7ff"]}
-          particleCount={260}
-          particleSpread={11}
-          speed={0.09}
-          particleBaseSize={110}
-          moveParticlesOnHover={true}
-          alphaParticles={false}
-          disableRotation={false}
-        />
-
         <div className="hero-overlay" />
+        <Navigation />
 
-        <nav className="glass-nav container">
-          <a href="#home" className="brand">
-            MZ
-          </a>
-          <div className="nav-links">
-            <a href="#about">Обо мне</a>
-            <a href="#stack">Стек</a>
-            <a href="#projects">Проекты</a>
-            <a href="#automation">AI</a>
-          </div>
-          <a href="#contact" className="nav-contact">
-            Связаться
-          </a>
-        </nav>
+        <div className="pillar-div">
+          <LightPillar
+            topColor="#5227FF"
+            bottomColor="#b2ff9f"
+            intensity={1}
+            rotationSpeed={0.15}
+            glowAmount={0.0017}
+            pillarWidth={7}
+            pillarHeight={0.7}
+            noiseIntensity={0.5}
+            pillarRotation={50}
+            interactive={false}
+            mixBlendMode="screen"
+            quality="high"
+          />
+        </div>
 
-        <div className="hero-content container reveal is-visible">
+        <div className="hero-content container reveal" data-animate>
           <p className="hero-role">React Developer | AI Automation</p>
           <h1>Жукоцкий Максим</h1>
           <p className="hero-description">
-            Разрабатываю интерфейсы на React и интегрирую AI-системы в реальные продукты
+            Разрабатываю интерфейсы на React <br /> Интегрирую AI-системы в реальные продукты
           </p>
+          {/* <p>Интегрирую AI-системы в реальные продукты</p> */}
           <div className="hero-actions">
             <a href="#projects" className="btn btn-primary">
               Проекты
@@ -164,9 +157,9 @@ const MainPage = () => {
         <section className="panel reveal" id="about" data-animate>
           <h2>Обо мне как о разработчике</h2>
           <p>
-            Специализируюсь на разработке SPA на React, проектирую понятные интерфейсы и
-            продумываю frontend-архитектуру. Интегрирую backend и AI-сервисы в веб-продукты,
-            чтобы система была цельной и рабочей в реальных сценариях.
+            Специализируюсь на разработке SPA на React, проектирую понятные интерфейсы и продумываю
+            frontend-архитектуру. Интегрирую backend и AI-сервисы в веб-продукты, чтобы система была цельной и рабочей в
+            реальных сценариях.
           </p>
           <ul className="accent-list">
             <li>Люблю frontend и проектирование интерфейсов</li>
@@ -235,9 +228,7 @@ const MainPage = () => {
 
         <section className="panel reveal" id="contact" data-animate>
           <h2>Связаться</h2>
-          <p>
-            Открыт к задачам по React, AI-интеграциям и автоматизации процессов в веб-продуктах.
-          </p>
+          <p>Открыт к задачам по React, AI-интеграциям и автоматизации процессов в веб-продуктах.</p>
           <div className="contact-row">
             <a href="mailto:your.email@example.com">your.email@example.com</a>
             <a href="https://github.com/your-username">github.com/your-username</a>

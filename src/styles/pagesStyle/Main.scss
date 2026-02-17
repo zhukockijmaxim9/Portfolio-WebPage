@@ -1,32 +1,19 @@
-$layout-border: rgba(120, 190, 255, 0.45);
-$layout-border-strong: rgba(120, 190, 255, 0.7);
-$layout-radius: 12px;
-
-@mixin block-frame($strong: false) {
-  $frame-color: $layout-border;
-
-  @if $strong {
-    $frame-color: $layout-border-strong;
-  }
-
-  border: 1px dashed $frame-color;
-  border-radius: $layout-radius;
-}
+$radius-md: 12px;
+$radius-sm: 8px;
+$bp-mobile: 768px;
+$bp-tablet: 900px;
+$bp-desktop-small: 1100px;
 
 .portfolio-page {
   position: relative;
   min-height: 100svh;
-  background:
-    radial-gradient(80rem 45rem at 110% -10%, rgba(83, 212, 255, 0.16), transparent),
-    radial-gradient(65rem 36rem at -10% -10%, rgba(67, 135, 255, 0.15), transparent),
-    #050d1d;
-  color: #f2f7ff;
+  background: var(--app-background);
+  color: var(--app-text);
 }
 
 .container {
   width: min(1180px, calc(100% - 2rem));
   margin: 0 auto;
-  @include block-frame();
 }
 
 .hero {
@@ -34,79 +21,31 @@ $layout-radius: 12px;
   min-height: 100svh;
   display: grid;
   align-content: start;
-  isolation: isolate;
   overflow: hidden;
-  @include block-frame(true);
-}
 
-.hero-particles {
-  inset: 0;
-  min-height: 100%;
-  @include block-frame();
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(to bottom, rgba(5, 13, 29, 0.35), rgba(5, 13, 29, 0.9)),
-    radial-gradient(circle at 50% 10%, transparent 18%, rgba(5, 13, 29, 0.45) 70%);
-}
-
-.glass-nav {
-  margin-top: 1.1rem;
-  position: sticky;
-  top: 0.9rem;
-  z-index: 6;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.68rem 0.9rem;
-  background: rgba(7, 22, 45, 0.62);
-  @include block-frame(true);
-
-  .brand,
-  .nav-contact {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.56rem 0.82rem;
-    text-decoration: none;
-    @include block-frame();
-  }
-
-  .brand {
-    width: 2.35rem;
-    height: 2.35rem;
-    padding: 0;
-    font-weight: 700;
-  }
-
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 0.38rem;
-    @include block-frame();
-
-    a {
-      padding: 0.5rem 0.72rem;
-      text-decoration: none;
-      @include block-frame();
-    }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: transparent;
   }
 }
+
+// .pillar-div {
+//   width: "100%";
+//   height: "500px";
+//   position: "relative";
+// }
 
 .hero-content {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   margin-top: clamp(5rem, 18vh, 10.5rem);
   text-align: center;
-  @include block-frame(true);
 
   .hero-role {
     margin: 0;
+    opacity: 0.85;
   }
 
   h1 {
@@ -116,6 +55,7 @@ $layout-radius: 12px;
   .hero-description {
     margin: 1.3rem auto 0;
     max-width: 760px;
+    line-height: 1.55;
   }
 }
 
@@ -125,7 +65,6 @@ $layout-radius: 12px;
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.75rem;
-  @include block-frame();
 }
 
 .btn {
@@ -134,13 +73,15 @@ $layout-radius: 12px;
   justify-content: center;
   min-width: 10rem;
   padding: 0.78rem 1.12rem;
+  border-radius: $radius-sm;
+  border: 1px solid var(--layout-border);
   text-decoration: none;
-  @include block-frame();
+  background: transparent;
 }
 
 .btn-primary,
 .btn-glass {
-  @include block-frame();
+  background: transparent;
 }
 
 .main-content {
@@ -148,13 +89,13 @@ $layout-radius: 12px;
   padding-bottom: 4rem;
   display: grid;
   gap: 1.05rem;
-  @include block-frame(true);
 }
 
 .panel {
   padding: clamp(1.15rem, 2.8vw, 2rem);
-  background: rgba(9, 23, 46, 0.72);
-  @include block-frame(true);
+  border: 1px solid var(--layout-border);
+  border-radius: $radius-md;
+  background: transparent;
 
   h2 {
     margin: 0;
@@ -163,11 +104,12 @@ $layout-radius: 12px;
   p {
     margin: 0.9rem 0 0;
     max-width: 74ch;
+    line-height: 1.6;
   }
 }
 
 .panel-accent {
-  background: rgba(10, 28, 58, 0.92);
+  border-color: var(--layout-border-strong);
 }
 
 .section-head {
@@ -176,11 +118,11 @@ $layout-radius: 12px;
   justify-content: space-between;
   gap: 0.8rem;
   flex-wrap: wrap;
-  @include block-frame();
 
   .head-note {
     padding: 0.28rem 0.64rem;
-    @include block-frame();
+    border: 1px solid var(--layout-border);
+    border-radius: $radius-sm;
   }
 }
 
@@ -200,7 +142,8 @@ $layout-radius: 12px;
 
 .stack-card {
   padding: 0.95rem;
-  @include block-frame();
+  border: 1px solid var(--layout-border);
+  border-radius: $radius-md;
 
   h3 {
     margin: 0;
@@ -219,10 +162,12 @@ $layout-radius: 12px;
   align-items: center;
   gap: 0.44rem;
   padding: 0.35rem 0.7rem;
-  @include block-frame();
+  border: 1px solid var(--layout-border);
+  border-radius: $radius-sm;
 
   small {
     display: inline-block;
+    opacity: 0.8;
   }
 }
 
@@ -235,12 +180,14 @@ $layout-radius: 12px;
 
 .project-card {
   padding: 1rem;
-  @include block-frame();
+  border: 1px solid var(--layout-border);
+  border-radius: $radius-md;
 
   .project-badge {
     display: inline-flex;
     padding: 0.22rem 0.58rem;
-    @include block-frame();
+    border: 1px solid var(--layout-border);
+    border-radius: $radius-sm;
   }
 
   h3 {
@@ -263,7 +210,8 @@ $layout-radius: 12px;
 
   span {
     padding: 0.74rem 0.82rem;
-    @include block-frame();
+    border: 1px solid var(--layout-border);
+    border-radius: $radius-sm;
   }
 }
 
@@ -276,7 +224,8 @@ $layout-radius: 12px;
 
   li {
     padding: 0.7rem 0.78rem;
-    @include block-frame();
+    border: 1px solid var(--layout-border);
+    border-radius: $radius-sm;
   }
 }
 
@@ -289,31 +238,31 @@ $layout-radius: 12px;
   a {
     padding: 0.52rem 0.72rem;
     text-decoration: none;
-    @include block-frame();
+    border: 1px solid var(--layout-border);
+    border-radius: $radius-sm;
   }
 }
 
 .reveal {
-  @include block-frame();
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease;
 }
 
 .reveal.is-visible {
-  @include block-frame(true);
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@media (max-width: 1100px) {
+@media (max-width: $bp-desktop-small) {
   .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 900px) {
-  .glass-nav {
-    .nav-links {
-      display: none;
-    }
-  }
-
+@media (max-width: $bp-tablet) {
   .stack-grid,
   .projects-grid,
   .automation-grid {
@@ -321,7 +270,7 @@ $layout-radius: 12px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $bp-mobile) {
   .container {
     width: min(1180px, calc(100% - 1.1rem));
   }

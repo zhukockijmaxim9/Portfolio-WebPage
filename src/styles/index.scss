@@ -1,5 +1,5 @@
 $font-main: "Montserrat", "Segoe UI", sans-serif;
-$page-bg: #050d1d;
+$page-bg: #000000;
 $text-main: #f2f7ff;
 $scroll-track: rgba(255, 255, 255, 0.06);
 $scroll-thumb: rgba(255, 255, 255, 0.22);
@@ -15,6 +15,10 @@ $mobile-breakpoint: 768px;
 
 :root {
   color-scheme: dark;
+  --app-background: #{$page-bg};
+  --app-text: #{$text-main};
+  --layout-border: rgba(120, 190, 255, 0.45);
+  --layout-border-strong: rgba(120, 190, 255, 0.7);
 }
 
 *,
@@ -32,8 +36,8 @@ body {
   margin: 0;
   min-height: 100svh;
   font-family: $font-main;
-  background: $page-bg;
-  color: $text-main;
+  background: var(--app-background);
+  color: var(--app-text);
   overflow-x: hidden;
 }
 

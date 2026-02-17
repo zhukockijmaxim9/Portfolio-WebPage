@@ -3,16 +3,16 @@ import "./navigation.scss";
 
 function Navigation() {
   return (
-    <nav>
-      <Link to="/projects" className="link">
+    <nav className="main-navigation container">
+      <a href="#about" className="nav-link">
+        Обо мне
+      </a>
+      <Link to="/projects" className="nav-link">
         Проекты
       </Link>
-      <Link to="/" className="link">
-        Главная
-      </Link>
-      <Link to="/contact" className="link">
+      <a href="#contact" className="nav-link">
         Контакты
-      </Link>
+      </a>
     </nav>
   );
 }

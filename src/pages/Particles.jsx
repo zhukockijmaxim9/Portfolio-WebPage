@@ -1,4 +1,5 @@
 import Particles from "../HelpComponents/Particles/Particles";
+import "../styles/pagesStyle/Particless.scss";
 
 const ParticlesPage = () => {
   return (
