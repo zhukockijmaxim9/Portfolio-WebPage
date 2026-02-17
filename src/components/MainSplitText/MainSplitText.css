@@ -1,14 +1,5 @@
-.main-page {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 0;
-}
 .main-container {
   font-family: "Montserrat", sans-serif;
-  margin-top: 20vh;
   width: fit-content;
 }
 .main-info {
@@ -57,17 +48,4 @@
 .more-about p {
   font-size: 1.25rem;
   margin-bottom: 1.25rem;
-}
-
-@media (max-width: 992px) {
-}
-@media (max-width: 768px) {
-  .main-container {
-    margin-top: 15vh;
-  }
-}
-@media (max-width: 576px) {
-  .main-container {
-    margin-top: 12vh;
-  }
 }

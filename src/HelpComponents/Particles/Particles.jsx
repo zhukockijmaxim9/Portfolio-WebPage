@@ -117,15 +117,26 @@ const Particles = ({
     window.addEventListener("resize", resize, false);
     resize();
 
-    const handleMouseMove = (e) => {
+    const updateMousePosition = (e) => {
       const rect = container.getBoundingClientRect();
+      const isInside =
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom;
+
+      if (!isInside) {
+        mouseRef.current = { x: 0, y: 0 };
+        return;
+      }
+
       const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
       const y = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
       mouseRef.current = { x, y };
     };
 
     if (moveParticlesOnHover) {
-      container.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mousemove", updateMousePosition);
     }
 
     const count = particleCount;
@@ -205,7 +216,7 @@ const Particles = ({
     return () => {
       window.removeEventListener("resize", resize);
       if (moveParticlesOnHover) {
-        container.removeEventListener("mousemove", handleMouseMove);
+        window.removeEventListener("mousemove", updateMousePosition);
       }
       cancelAnimationFrame(animationFrameId);
       if (container.contains(gl.canvas)) {

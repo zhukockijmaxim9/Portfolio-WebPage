@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="app">
       <BrowserRouter>
-        <Navigation />
+        {/* <Navigation /> */}
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/projects" element={<ParticlesPage />} />

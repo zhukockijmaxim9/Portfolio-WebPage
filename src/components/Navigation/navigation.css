@@ -9,7 +9,7 @@ nav {
   background-color: rgba(98, 123, 172, 0.5);
   align-items: center;
   justify-content: space-around;
-  width: 500px;
+  width: 75vw;
   padding: 15px 10px;
 
   background: rgba(255, 255, 255, 0.15);
@@ -27,5 +27,13 @@ nav {
   color: aliceblue;
   font-family: "Montseratt", sans-serif;
   font-weight: 500;
+  font-size: 2rem;
   text-align: center;
+}
+
+@media (max-width: 992px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 576px) {
 }

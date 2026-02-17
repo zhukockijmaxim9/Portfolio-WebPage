@@ -5,3 +5,13 @@
   gap: 2rem;
   margin-top: 1rem;
 }
+
+@media (max-width: 992px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 576px) {
+  .buttons {
+    flex-direction: column;
+  }
+}

@@ -2,6 +2,11 @@ import "../styles/pagesStyle/Main.css";
 import Particles from "../HelpComponents/Particles/Particles";
 import MainSplitText from "../components/MainSplitText/MainSplitText";
 import Buttons from "../components/Button/Buttons";
+// import Slik from ".././HelpComponents/Slik/Slik";
+
+// const generateBackground = (min, max) => {
+//   return Math.floor(Math.random() * (max - min + 1)) + min;
+// };
 
 const MainPage = () => {
   return (
@@ -16,8 +21,11 @@ const MainPage = () => {
         alphaParticles={false}
         disableRotation={false}
       />
-      <MainSplitText />
-      <Buttons />
+      <section className="first-section">
+        <MainSplitText />
+        <Buttons />
+      </section>
+      <section className="second-section"></section>
       <div className="className" />
     </div>
   );

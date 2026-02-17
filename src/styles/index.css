@@ -43,6 +43,18 @@ body {
   background: rgba(255, 255, 255, 0.5);
 }
 
+@media (max-width: 1280px) {
+}
+@media (max-width: 992px) {
+  /* html {
+    font-size: 14px;
+  } */
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
 @media (max-width: 576px) {
   html {
     font-size: 10px;
