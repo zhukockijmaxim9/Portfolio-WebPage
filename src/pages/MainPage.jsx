@@ -89,17 +89,21 @@ const workflowSteps = [
 ];
 
 const MainPage = () => {
+  const [isHeroBodyVisible, setHeroBodyVisible] = useState(false);
   const [isHeroCtaVisible, setHeroCtaVisible] = useState(false);
+
+  const showHeroBody = useCallback(() => {
+    setHeroBodyVisible(true);
+  }, []);
 
   const showHeroCta = useCallback(() => {
     setHeroCtaVisible(true);
   }, []);
 
-  const heroIntroSteps = useMemo(
+  const heroTopSteps = useMemo(
     () => [
       {
         content: <p className="hero-role">React Developer | AI Automation</p>,
-        className: "hero-step hero-step--1",
         splitType: "words",
         delay: 75,
         from: { opacity: 0, y: 24 },
@@ -107,15 +111,19 @@ const MainPage = () => {
       },
       {
         content: <h1 className="hero-name">FullStack разработчик</h1>,
-        className: "hero-step hero-step--2",
         splitType: "chars",
         delay: 35,
         from: { opacity: 0, y: 44 },
         to: { opacity: 1, y: 0 },
       },
+    ],
+    [],
+  );
+
+  const heroBottomSteps = useMemo(
+    () => [
       {
         content: <p className="hero-line">Разрабатываю интерфейсы на React</p>,
-        className: "hero-step hero-step--3",
         splitType: "words",
         delay: 45,
         from: { opacity: 0, y: 24 },
@@ -123,7 +131,6 @@ const MainPage = () => {
       },
       {
         content: <p className="hero-line">Интегрирую AI-системы в реальные продукты</p>,
-        className: "hero-step hero-step--4",
         splitType: "words",
         delay: 45,
         from: { opacity: 0, y: 24 },
@@ -179,7 +186,23 @@ const MainPage = () => {
         </div>
 
         <div className="hero-content container">
-          <SplitText className="hero-sequence" textAlign="center" duration={0.72} ease="power3.out" steps={heroIntroSteps} onComplete={showHeroCta} />
+          <div className="hero-sequence">
+            <div className="hero-group hero-group--top">
+              <SplitText className="hero-group-text" textAlign="center" duration={0.72} ease="power3.out" steps={heroTopSteps} onComplete={showHeroBody} />
+            </div>
+            {isHeroBodyVisible && (
+              <div className="hero-group hero-group--bottom">
+                <SplitText
+                  className="hero-group-text"
+                  textAlign="center"
+                  duration={0.72}
+                  ease="power3.out"
+                  steps={heroBottomSteps}
+                  onComplete={showHeroCta}
+                />
+              </div>
+            )}
+          </div>
           <div className={`hero-actions${isHeroCtaVisible ? " is-visible" : ""}`}>
             <Button href="https://github.com/your-username" className="app-button--glass">
               GitHub

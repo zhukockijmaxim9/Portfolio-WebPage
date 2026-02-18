@@ -85,19 +85,27 @@ $bp-desktop-small: 1100px;
   gap: 0;
 }
 
-.hero-step {
-  margin-top: 0;
+.hero-group {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-.hero-step--2 {
-  margin-top: 0.45rem;
-}
-
-.hero-step--3 {
+.hero-group--bottom {
   margin-top: 0.85rem;
 }
 
-.hero-step--4 {
+.hero-group-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-group--top .hero-group-text > [data-step="1"] {
+  margin-top: 0.45rem;
+}
+
+.hero-group--bottom .hero-group-text > [data-step="1"] {
   margin-top: 0.3rem;
 }
 
