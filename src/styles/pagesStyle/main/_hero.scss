@@ -1,0 +1,143 @@
+// Hero block and staged intro typography
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6.5rem 0 3rem;
+  overflow: hidden;
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+      radial-gradient(circle at 50% 32%, rgba(120, 190, 255, 0.17), rgba(120, 190, 255, 0) 62%),
+      linear-gradient(180deg, rgba(15, 23, 42, 0.08), rgba(0, 0, 0, 0.28));
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 34rem;
+    height: 34rem;
+    left: -9rem;
+    bottom: -20rem;
+    z-index: 0;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(82, 39, 255, 0.25), rgba(82, 39, 255, 0));
+    filter: blur(8px);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 26rem;
+    height: 26rem;
+    right: -8rem;
+    top: 20%;
+    z-index: 0;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(178, 255, 159, 0.18), rgba(178, 255, 159, 0));
+    filter: blur(10px);
+  }
+}
+
+.pillar-div {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+}
+
+.hero-sequence {
+  max-width: 56rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.hero-group {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero-group--bottom {
+  margin-top: 0.85rem;
+}
+
+.hero-group-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-group--top .hero-group-text > [data-step="1"] {
+  margin-top: 0.45rem;
+}
+
+.hero-group--bottom .hero-group-text > [data-step="1"] {
+  margin-top: 0.3rem;
+}
+
+.hero-role {
+  margin: 0;
+  opacity: 0.94;
+  font-size: 1.75rem;
+  line-height: 1.12;
+  letter-spacing: 0.018em;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-shadow: 0 0 1.4rem rgba(82, 39, 255, 0.32);
+}
+
+.hero-name {
+  margin: 0;
+  font-size: 4.2rem;
+  line-height: 1.04;
+  letter-spacing: 0.01em;
+  font-weight: 800;
+  text-shadow:
+    0 0 2rem rgba(82, 39, 255, 0.26),
+    0 0 1rem rgba(120, 190, 255, 0.2);
+}
+
+.hero-line {
+  margin: 0;
+  font-size: 1.32rem;
+  line-height: 1.38;
+  font-weight: 540;
+  opacity: 0.94;
+}
+
+.hero-actions {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  opacity: 0;
+  transform: translateY(0.9rem);
+  pointer-events: none;
+  transition:
+    opacity 360ms ease,
+    transform 360ms ease;
+}
+
+.hero-actions.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}

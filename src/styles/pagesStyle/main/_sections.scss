@@ -1,0 +1,154 @@
+@use "./tokens" as *;
+
+// Content panels and section-specific UI blocks
+.panel {
+  padding: clamp(1.15rem, 2.8vw, 2rem);
+  border: 1px solid var(--layout-border);
+  border-radius: $radius-md;
+  background: transparent;
+
+  h2 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0.9rem 0 0;
+    max-width: 74ch;
+    line-height: 1.6;
+  }
+}
+
+.panel-accent {
+  border-color: var(--layout-border-strong);
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+
+  .head-note {
+    padding: 0.28rem 0.64rem;
+    border: 1px solid var(--layout-border);
+    border-radius: $radius-sm;
+  }
+}
+
+.accent-list {
+  margin: 0.92rem 0 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.58rem;
+}
+
+.stack-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.stack-card {
+  padding: 0.95rem;
+  border: 1px solid var(--layout-border);
+  border-radius: $radius-md;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.stack-items {
+  margin-top: 0.72rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.44rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--layout-border);
+  border-radius: $radius-sm;
+
+  small {
+    display: inline-block;
+    opacity: 0.8;
+  }
+}
+
+.projects-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.project-card {
+  padding: 1rem;
+  border: 1px solid var(--layout-border);
+  border-radius: $radius-md;
+
+  .project-badge {
+    display: inline-flex;
+    padding: 0.22rem 0.58rem;
+    border: 1px solid var(--layout-border);
+    border-radius: $radius-sm;
+  }
+
+  h3 {
+    margin: 0.8rem 0 0;
+  }
+
+  ul {
+    margin: 0.78rem 0 0;
+    padding-left: 1.05rem;
+    display: grid;
+    gap: 0.5rem;
+  }
+}
+
+.automation-grid {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.64rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  span {
+    padding: 0.74rem 0.82rem;
+    border: 1px solid var(--layout-border);
+    border-radius: $radius-sm;
+  }
+}
+
+.workflow-list {
+  margin: 1rem 0 0;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+
+  li {
+    padding: 0.7rem 0.78rem;
+    border: 1px solid var(--layout-border);
+    border-radius: $radius-sm;
+  }
+}
+
+.contact-row {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.64rem;
+
+  a {
+    padding: 0.52rem 0.72rem;
+    text-decoration: none;
+    border: 1px solid var(--layout-border);
+    border-radius: $radius-sm;
+  }
+}

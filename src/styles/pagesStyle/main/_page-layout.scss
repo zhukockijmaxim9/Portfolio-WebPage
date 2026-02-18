@@ -1,0 +1,19 @@
+// Page-level layout wrappers
+.portfolio-page {
+  position: relative;
+  min-height: 100svh;
+  background: var(--app-background);
+  color: var(--app-text);
+}
+
+.container {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.main-content {
+  margin-top: 1.6rem;
+  padding-bottom: 4rem;
+  display: grid;
+  gap: 1.05rem;
+}
