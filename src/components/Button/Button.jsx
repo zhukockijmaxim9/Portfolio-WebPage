@@ -1,18 +1,13 @@
-import React from "react";
 import "./Button.scss";
 
-const Button = ({ children, onClick, type = "button", disabled = false, className = "", ...props }) => {
+function Button({ href, children, className = "", target, rel }) {
+  const classes = `app-button app-button--glass app-button--blue ${className}`.trim();
+
   return (
-    <button
-      type={type}
-      onClick={onClick}
-      disabled={disabled}
-      className={`button ${className}`} // Добавляем классы
-      {...props} // Остальные пропсы (например, aria-label)
-    >
+    <a className={classes} href={href} target={target} rel={rel}>
       {children}
-    </button>
+    </a>
   );
-};
+}
 
 export default Button;

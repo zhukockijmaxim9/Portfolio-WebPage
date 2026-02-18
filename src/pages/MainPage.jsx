@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Navigation from "../components/Navigation/Navigation";
+import Button from "../components/Button/Button";
 import "../styles/pagesStyle/Main.scss";
 import LightPillar from "../HelpComponents/Pillar/Pillar";
 
@@ -134,21 +135,14 @@ const MainPage = () => {
 
         <div className="hero-content container reveal" data-animate>
           <p className="hero-role">React Developer | AI Automation</p>
-          {/* <h1>Жукоцкий Максим</h1> */}
+          <h1>Жукоцкий Максим</h1>
           <p className="hero-description">
             Разрабатываю интерфейсы на React <br /> Интегрирую AI-системы в реальные продукты
           </p>
-          {/* <p>Интегрирую AI-системы в реальные продукты</p> */}
           <div className="hero-actions">
-            <a href="#projects" className="btn btn-primary">
-              Проекты
-            </a>
-            <a href="https://github.com/your-username" className="btn btn-glass">
+            <Button href="https://github.com/your-username" className="app-button--glass">
               GitHub
-            </a>
-            <a href="#contact" className="btn btn-glass">
-              Связаться
-            </a>
+            </Button>
           </div>
         </div>
       </section>

@@ -65,16 +65,8 @@ $radius-sm: 999px;
 
 @media (max-width: 768px) {
   .main-navigation {
-    top: 0;
-    left: 0;
-    transform: none;
-    width: 100%;
-    height: 56px;
-    padding: 6px 8px;
-    border-radius: 0 0 18px 18px;
-    border-top: none;
+    width: 70vw;
   }
-
   .main-navigation .nav-link {
     border-radius: 12px;
     font-size: 14px;
@@ -83,8 +75,13 @@ $radius-sm: 999px;
 
 @media (max-width: 480px) {
   .main-navigation {
-    height: 52px;
-    padding: 5px 6px;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    padding: 6px 8px;
+    border-radius: 0 0 18px 18px;
+    border-top: none;
   }
 
   .main-navigation .nav-link {

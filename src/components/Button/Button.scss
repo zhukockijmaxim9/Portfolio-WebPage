@@ -1,24 +1,44 @@
-$button-border: rgba(120, 190, 255, 0.45);
-
-.button {
-  position: relative;
-  z-index: 1;
-  padding: 1.25rem 2.5rem;
-  border: 1px dashed $button-border;
-  border-radius: 1rem;
-  background: transparent;
-  font-size: 1.25rem;
-  cursor: pointer;
-
-  &.primary,
-  &.secondary {
-    border: 1px dashed $button-border;
-    background: transparent;
-  }
+.app-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 10rem;
+  padding: 0.78rem 1.12rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.94);
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease,
+    color 160ms ease;
 }
 
-@media (max-width: 576px) {
-  .button {
-    font-size: 2rem;
-  }
+.app-button--glass {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 10px 26px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.app-button--blue {
+  background: linear-gradient(135deg, rgba(56, 130, 255, 0.22), rgba(255, 255, 255, 0.08));
+  border-color: rgba(110, 168, 255, 0.52);
+  box-shadow:
+    0 12px 28px rgba(13, 36, 82, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.app-button:hover {
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.app-button--blue:hover {
+  background: linear-gradient(135deg, rgba(65, 144, 255, 0.3), rgba(255, 255, 255, 0.12));
+  border-color: rgba(140, 191, 255, 0.68);
 }
