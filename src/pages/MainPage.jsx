@@ -4,7 +4,6 @@ import Button from "../components/Button/Button";
 import "../styles/pagesStyle/Main.scss";
 import LightPillar from "../HelpComponents/Pillar/Pillar";
 import SplitText from "../HelpComponents/SplitText/SplitText";
-import ShinyText from "../HelpComponents/ShinyText/ShinyText";
 
 const stackCards = [
   {
@@ -100,43 +99,35 @@ const MainPage = () => {
     () => [
       {
         content: <p className="hero-role">React Developer | AI Automation</p>,
+        className: "hero-step hero-step--1",
         splitType: "words",
         delay: 75,
         from: { opacity: 0, y: 24 },
         to: { opacity: 1, y: 0 },
       },
       {
-        content: <h1 className="hero-name">{"\u0416\u0443\u043a\u043e\u0446\u043a\u0438\u0439\u0020\u041c\u0430\u043a\u0441\u0438\u043c"}</h1>,
+        content: <h1 className="hero-name">FullStack разработчик</h1>,
+        className: "hero-step hero-step--2",
         splitType: "chars",
         delay: 35,
         from: { opacity: 0, y: 44 },
         to: { opacity: 1, y: 0 },
       },
       {
-        content: (
-          <ShinyText
-            text={"\u0420\u0430\u0437\u0440\u0430\u0431\u0430\u0442\u044b\u0432\u0430\u044e\u0020\u0438\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u044b\u0020\u043d\u0430\u0020\u0052\u0065\u0061\u0063\u0074"}
-            speed={3.8}
-            className="hero-shiny-line"
-          />
-        ),
+        content: <p className="hero-line">Разрабатываю интерфейсы на React</p>,
+        className: "hero-step hero-step--3",
         splitType: "words",
         delay: 45,
-        from: { opacity: 0, x: -26, filter: "blur(6px)" },
-        to: { opacity: 1, x: 0, filter: "blur(0px)" },
+        from: { opacity: 0, y: 24 },
+        to: { opacity: 1, y: 0 },
       },
       {
-        content: (
-          <ShinyText
-            text={"\u0418\u043d\u0442\u0435\u0433\u0440\u0438\u0440\u0443\u044e\u0020\u0041\u0049\u002d\u0441\u0438\u0441\u0442\u0435\u043c\u044b\u0020\u0432\u0020\u0440\u0435\u0430\u043b\u044c\u043d\u044b\u0435\u0020\u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b"}
-            speed={3.8}
-            className="hero-shiny-line"
-          />
-        ),
+        content: <p className="hero-line">Интегрирую AI-системы в реальные продукты</p>,
+        className: "hero-step hero-step--4",
         splitType: "words",
         delay: 45,
-        from: { opacity: 0, x: 26, filter: "blur(6px)" },
-        to: { opacity: 1, x: 0, filter: "blur(0px)" },
+        from: { opacity: 0, y: 24 },
+        to: { opacity: 1, y: 0 },
       },
     ],
     [],
