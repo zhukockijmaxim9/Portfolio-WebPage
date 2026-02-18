@@ -134,7 +134,7 @@ const MainPage = () => {
 
         <div className="hero-content container reveal" data-animate>
           <p className="hero-role">React Developer | AI Automation</p>
-          <h1>Жукоцкий Максим</h1>
+          {/* <h1>Жукоцкий Максим</h1> */}
           <p className="hero-description">
             Разрабатываю интерфейсы на React <br /> Интегрирую AI-системы в реальные продукты
           </p>

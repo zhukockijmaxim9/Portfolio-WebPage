@@ -3,25 +3,18 @@ $radius-sm: 999px;
 
 .main-navigation {
   position: fixed;
-  top: 20px;
+  top: 25px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
 
-  /* фиксированная ширина на десктопе */
-  // width: 420px;
-  max-width: 50vw;
-  height: 56px;
+  padding: 5px 5px;
 
-  padding: 6px;
+  width: 40vw;
   border-radius: $radius-md;
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); // 3 равные части
+  display: flex;
   align-items: center;
-  gap: 6px;
-
-  /* матовое стекло */
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -31,8 +24,9 @@ $radius-sm: 999px;
     inset 0 1px 0 rgba(255, 255, 255, 0.12);
 
   .nav-link {
-    height: 100%;
-    width: 100%;
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 10px 0px;
 
     display: flex;
     align-items: center;
@@ -55,22 +49,51 @@ $radius-sm: 999px;
   }
 }
 
-/* адаптив под телефоны */
-@media (max-width: 480px) {
+@media (max-width: 1280px) {
   .main-navigation {
-    width: 320px;
-    height: 52px;
-    top: 14px;
-
-    .nav-link {
-      font-size: 14px;
-    }
+    width: 50vw;
+    top: 20px;
   }
 }
 
-/* совсем узкие экраны */
-@media (max-width: 360px) {
+@media (max-width: 1024px) {
   .main-navigation {
-    width: calc(100vw - 16px); // почти во всю ширину
+    width: 60vw;
+    top: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-navigation {
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    height: 56px;
+    padding: 6px 8px;
+    border-radius: 0 0 18px 18px;
+    border-top: none;
+  }
+
+  .main-navigation .nav-link {
+    border-radius: 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-navigation {
+    height: 52px;
+    padding: 5px 6px;
+  }
+
+  .main-navigation .nav-link {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 360px) {
+  .main-navigation .nav-link {
+    font-size: 12px;
   }
 }
