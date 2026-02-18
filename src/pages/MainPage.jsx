@@ -172,11 +172,11 @@ const MainPage = () => {
           <LightPillar
             topColor="#5227FF"
             bottomColor="#b2ff9f"
-            intensity={1}
-            rotationSpeed={0.15}
+            intensity={0.75}
+            rotationSpeed={0.1}
             glowAmount={0.0017}
             pillarWidth={7}
-            pillarHeight={0.7}
+            pillarHeight={0.6}
             noiseIntensity={0.5}
             pillarRotation={50}
             interactive={false}
@@ -188,10 +188,17 @@ const MainPage = () => {
         <div className="hero-content container">
           <div className="hero-sequence">
             <div className="hero-group hero-group--top">
-              <SplitText className="hero-group-text" textAlign="center" duration={0.72} ease="power3.out" steps={heroTopSteps} onComplete={showHeroBody} />
+              <SplitText
+                className="hero-group-text"
+                textAlign="center"
+                duration={0.72}
+                ease="power3.out"
+                steps={heroTopSteps}
+                onComplete={showHeroBody}
+              />
             </div>
-            {isHeroBodyVisible && (
-              <div className="hero-group hero-group--bottom">
+            <div className="hero-group hero-group--bottom">
+              {isHeroBodyVisible ? (
                 <SplitText
                   className="hero-group-text"
                   textAlign="center"
@@ -200,8 +207,13 @@ const MainPage = () => {
                   steps={heroBottomSteps}
                   onComplete={showHeroCta}
                 />
-              </div>
-            )}
+              ) : (
+                <div className="hero-group-placeholder" aria-hidden="true">
+                  <p className="hero-line hero-line--ghost">&nbsp;</p>
+                  <p className="hero-line hero-line--ghost">&nbsp;</p>
+                </div>
+              )}
+            </div>
           </div>
           <div className={`hero-actions${isHeroCtaVisible ? " is-visible" : ""}`}>
             <Button href="https://github.com/your-username" className="app-button--glass">

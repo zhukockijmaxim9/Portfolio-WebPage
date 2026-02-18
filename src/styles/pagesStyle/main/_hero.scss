@@ -84,6 +84,20 @@
   align-items: center;
 }
 
+.hero-group-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-group-placeholder .hero-line + .hero-line {
+  margin-top: 0.3rem;
+}
+
+.hero-line--ghost {
+  visibility: hidden;
+}
+
 .hero-group--top .hero-group-text > [data-step="1"] {
   margin-top: 0.45rem;
 }
