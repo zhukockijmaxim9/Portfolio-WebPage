@@ -11,40 +11,6 @@
   // height: 100dvh;
   // height: 120vh;
 
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background:
-      radial-gradient(circle at 50% 32%, rgba(120, 190, 255, 0.17), rgba(120, 190, 255, 0) 62%),
-      linear-gradient(180deg, rgba(15, 23, 42, 0.08), rgba(0, 0, 0, 0.28));
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 34rem;
-    height: 34rem;
-    left: -9rem;
-    bottom: -20rem;
-    z-index: 0;
-    border-radius: 999px;
-    background: radial-gradient(circle, rgba(82, 39, 255, 0.25), rgba(82, 39, 255, 0));
-    filter: blur(8px);
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    width: 26rem;
-    height: 26rem;
-    right: -8rem;
-    top: 20%;
-    z-index: 0;
-    border-radius: 999px;
-    background: radial-gradient(circle, rgba(178, 255, 159, 0.18), rgba(178, 255, 159, 0));
-    filter: blur(10px);
-  }
 }
 
 .hero-content {

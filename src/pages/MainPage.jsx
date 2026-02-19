@@ -182,7 +182,6 @@ const MainPage = () => {
       </div>
 
       <section className="hero" id="home">
-        <div className="hero-overlay" />
         <Navigation />
 
         <div className="hero-content container">
