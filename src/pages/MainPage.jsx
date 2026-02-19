@@ -103,7 +103,7 @@ const MainPage = () => {
   const heroTopSteps = useMemo(
     () => [
       {
-        content: <p className="hero-role">React Developer | AI Automation</p>,
+        content: <p className="hero-role">React Development | AI Automation</p>,
         splitType: "words",
         delay: 75,
         from: { opacity: 0, y: 24 },
@@ -216,7 +216,7 @@ const MainPage = () => {
             </div>
           </div>
           <div className={`hero-actions${isHeroCtaVisible ? " is-visible" : ""}`}>
-            <Button href="https://github.com/your-username" className="app-button--glass">
+            <Button href="https://github.com/zhukockijmaxim9" className="app-button--glass">
               GitHub
             </Button>
           </div>
