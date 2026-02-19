@@ -7,6 +7,9 @@
   justify-content: center;
   padding: 6.5rem 0 3rem;
   overflow: hidden;
+  // min-height: 300px;
+  // height: 100dvh;
+  // height: 120vh;
 
   .hero-overlay {
     position: absolute;
@@ -133,7 +136,7 @@
 }
 
 .hero-actions {
-  margin-top: 0.75rem;
+  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -150,4 +153,39 @@
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+}
+
+.hero-scroll-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.94);
+  transition: color 180ms ease;
+}
+
+.hero-scroll-cta__label {
+  font-size: 1.2rem;
+  line-height: 1;
+  font-weight: 640;
+  letter-spacing: 0.01em;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-scroll-cta__arrow {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  line-height: 0.8;
+  font-weight: 650;
+  margin: -0.2rem 0 0;
+  padding: 0;
+}
+
+.hero-scroll-link:hover {
+  color: #fff;
 }

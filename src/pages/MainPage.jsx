@@ -216,9 +216,12 @@ const MainPage = () => {
             </div>
           </div>
           <div className={`hero-actions${isHeroCtaVisible ? " is-visible" : ""}`}>
-            <Button href="https://github.com/zhukockijmaxim9" className="app-button--glass">
-              GitHub
-            </Button>
+            <a href="#about" className="hero-scroll-link">
+              <span className="hero-scroll-cta__label">{"\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435"}</span>
+              <span className="hero-scroll-cta__arrow" aria-hidden="true">
+                {"\u2193"}
+              </span>
+            </a>
           </div>
         </div>
       </section>
@@ -236,6 +239,11 @@ const MainPage = () => {
             <li>Имею backend-опыт: Go, microservices, JWT</li>
             <li>Развиваюсь в AI automation и AI-интеграциях</li>
           </ul>
+          <div className="about-actions">
+            <Button href="https://github.com/zhukockijmaxim9" className="app-button--glass">
+              GitHub
+            </Button>
+          </div>
         </section>
 
         <section className="panel reveal" id="stack" data-animate>

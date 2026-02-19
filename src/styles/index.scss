@@ -30,6 +30,7 @@ $mobile-breakpoint: 768px;
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  min-height: 300px;
 }
 
 body {
