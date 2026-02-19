@@ -1,0 +1,36 @@
+﻿@use "./tokens" as *;
+
+.panel {
+  padding: clamp(1.15rem, 2.8vw, 2rem);
+  border: 1px solid var(--layout-border);
+  border-radius: 3rem;
+  background: black;
+
+  h2 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0.9rem 0 0;
+    max-width: 74ch;
+    line-height: 1.6;
+  }
+}
+
+.panel-accent {
+  border-color: var(--layout-border-strong);
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+
+  .head-note {
+    padding: 0.28rem 0.64rem;
+    border: 1px solid var(--layout-border);
+    border-radius: $radius-sm;
+  }
+}

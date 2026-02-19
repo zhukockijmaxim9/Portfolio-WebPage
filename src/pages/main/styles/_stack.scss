@@ -1,0 +1,39 @@
+﻿@use "./tokens" as *;
+
+.stack-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.stack-card {
+  padding: 0.95rem;
+  border: 1px solid var(--layout-border);
+  border-radius: $radius-md;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.stack-items {
+  margin-top: 0.72rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.44rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--layout-border);
+  border-radius: $radius-sm;
+
+  small {
+    display: inline-block;
+    opacity: 0.8;
+  }
+}

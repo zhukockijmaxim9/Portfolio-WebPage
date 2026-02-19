@@ -1,7 +1,0 @@
-// Main page styles entrypoint.
-// Import order is intentional: base -> hero -> sections -> reveal -> responsive.
-@use "./main/page-layout";
-@use "./main/hero";
-@use "./main/sections";
-@use "./main/reveal";
-@use "./main/responsive";
