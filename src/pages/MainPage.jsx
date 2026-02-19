@@ -164,26 +164,26 @@ const MainPage = () => {
 
   return (
     <div className="portfolio-page">
+      <div className="page-pillar-bg" aria-hidden="true">
+        <LightPillar
+          topColor="#5227FF"
+          bottomColor="#b2ff9f"
+          intensity={0.75}
+          rotationSpeed={0.1}
+          glowAmount={0.0017}
+          pillarWidth={7}
+          pillarHeight={0.6}
+          noiseIntensity={0.5}
+          pillarRotation={50}
+          interactive={false}
+          mixBlendMode="screen"
+          quality="high"
+        />
+      </div>
+
       <section className="hero" id="home">
         <div className="hero-overlay" />
         <Navigation />
-
-        <div className="pillar-div">
-          <LightPillar
-            topColor="#5227FF"
-            bottomColor="#b2ff9f"
-            intensity={0.75}
-            rotationSpeed={0.1}
-            glowAmount={0.0017}
-            pillarWidth={7}
-            pillarHeight={0.6}
-            noiseIntensity={0.5}
-            pillarRotation={50}
-            interactive={false}
-            mixBlendMode="screen"
-            quality="high"
-          />
-        </div>
 
         <div className="hero-content container">
           <div className="hero-sequence">
