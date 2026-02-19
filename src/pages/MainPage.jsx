@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Navigation from "../components/Navigation/Navigation";
-import Button from "../components/Button/Button";
 import "../styles/pagesStyle/Main.scss";
 import LightPillar from "../HelpComponents/Pillar/Pillar";
 import SplitText from "../HelpComponents/SplitText/SplitText";
+import aboutPhoto from "../images/Moskow.jpg";
 
 const stackCards = [
   {
@@ -227,21 +227,45 @@ const MainPage = () => {
 
       <main className="container main-content">
         <section className="panel reveal" id="about" data-animate>
-          <h2>Обо мне как о разработчике</h2>
-          <p>
-            Специализируюсь на разработке SPA на React, проектирую понятные интерфейсы и продумываю
-            frontend-архитектуру. Интегрирую backend и AI-сервисы в веб-продукты, чтобы система была цельной и рабочей в
-            реальных сценариях.
-          </p>
-          <ul className="accent-list">
-            <li>Люблю frontend и проектирование интерфейсов</li>
-            <li>Имею backend-опыт: Go, microservices, JWT</li>
-            <li>Развиваюсь в AI automation и AI-интеграциях</li>
-          </ul>
-          <div className="about-actions">
-            <Button href="https://github.com/zhukockijmaxim9" className="app-button--glass">
-              GitHub
-            </Button>
+          <h2>{"\u041e\u0431\u043e \u043c\u043d\u0435 \u043a\u0430\u043a \u043e \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0447\u0438\u043a\u0435"}</h2>
+          <div className="about-layout">
+            <figure className="about-photo-wrap">
+              <img
+                className="about-photo"
+                src={aboutPhoto}
+                alt={"\u041c\u0430\u043a\u0441\u0438\u043c, React Developer"}
+                loading="lazy"
+              />
+            </figure>
+            <div className="about-content">
+              <h3 className="about-name">{"\u041c\u0430\u043a\u0441\u0438\u043c"}</h3>
+              <p className="about-role">React Developer | AI Automation</p>
+              <p className="about-summary">
+                {
+                  "\u0420\u0430\u0437\u0440\u0430\u0431\u0430\u0442\u044b\u0432\u0430\u044e SPA \u043d\u0430 React \u0441 \u0444\u043e\u043a\u0443\u0441\u043e\u043c \u043d\u0430 \u043f\u043e\u043d\u044f\u0442\u043d\u044b\u0439 UX \u0438 \u0447\u0438\u0441\u0442\u0443\u044e frontend-\u0430\u0440\u0445\u0438\u0442\u0435\u043a\u0442\u0443\u0440\u0443. \u0418\u043d\u0442\u0435\u0433\u0440\u0438\u0440\u0443\u044e AI-\u0441\u0435\u0440\u0432\u0438\u0441\u044b \u0432 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u043e\u0432\u044b\u0435 \u0441\u0446\u0435\u043d\u0430\u0440\u0438\u0438, \u0430 backend-\u043e\u043f\u044b\u0442 \u043d\u0430 Go \u0438 microservices \u043f\u043e\u043c\u043e\u0433\u0430\u0435\u0442 \u0441\u0442\u0440\u043e\u0438\u0442\u044c \u0446\u0435\u043b\u043e\u0441\u0442\u043d\u044b\u0435 \u0441\u0438\u0441\u0442\u0435\u043c\u044b. \u0421\u0435\u0439\u0447\u0430\u0441 \u0443\u0441\u0438\u043b\u0438\u0432\u0430\u044e \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 AI automation \u0434\u043b\u044f \u043f\u0440\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u0431\u0438\u0437\u043d\u0435\u0441-\u0437\u0430\u0434\u0430\u0447."
+                }
+              </p>
+              <ul className="about-list">
+                <li>{"\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430 SPA \u043d\u0430 React"}</li>
+                <li>{"\u0418\u043d\u0442\u0435\u0433\u0440\u0430\u0446\u0438\u044f AI-\u0441\u0435\u0440\u0432\u0438\u0441\u043e\u0432"}</li>
+                <li>{"\u041f\u0440\u043e\u0435\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 backend \u043d\u0430 Go"}</li>
+                <li>{"\u0420\u0430\u0431\u043e\u0442\u0430 \u0441 microservices"}</li>
+              </ul>
+              <div className="about-actions">
+                <a
+                  href="https://github.com/zhukockijmaxim9"
+                  className="about-github-link"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub profile"
+                >
+                  <svg viewBox="0 0 16 16" aria-hidden="true">
+                    <path d="M8 0.2a7.8 7.8 0 0 0-2.5 15.2c0.4 0.1 0.5-0.2 0.5-0.4v-1.5c-2.1 0.5-2.5-0.9-2.5-0.9-0.4-0.8-0.8-1-0.8-1-0.7-0.4 0-0.4 0-0.4 0.7 0 1.1 0.8 1.1 0.8 0.7 1.1 1.7 0.8 2.1 0.6 0.1-0.5 0.3-0.8 0.5-1-1.7-0.2-3.5-0.9-3.5-3.9 0-0.9 0.3-1.6 0.8-2.2 0-0.2-0.3-1 0.1-2.1 0 0 0.7-0.2 2.2 0.8a7.5 7.5 0 0 1 4.1 0c1.5-1 2.2-0.8 2.2-0.8 0.4 1.1 0.2 1.9 0.1 2.1 0.5 0.6 0.8 1.4 0.8 2.2 0 3-1.8 3.7-3.5 3.9 0.3 0.2 0.5 0.7 0.5 1.4v2c0 0.2 0.1 0.5 0.5 0.4A7.8 7.8 0 0 0 8 0.2z" />
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
           </div>
         </section>
 

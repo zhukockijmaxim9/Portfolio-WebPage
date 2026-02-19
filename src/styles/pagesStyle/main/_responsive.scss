@@ -50,6 +50,10 @@
   .automation-grid {
     grid-template-columns: 1fr;
   }
+
+  .about-layout {
+    gap: 1.35rem;
+  }
 }
 
 // Mobile
@@ -88,6 +92,29 @@
 
   .main-content {
     margin-top: 1rem;
+  }
+
+  #about {
+    margin-bottom: clamp(5.4rem, 16vw, 7rem);
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
+  }
+
+  .about-photo-wrap {
+    margin: 0 auto;
+    max-width: min(100%, 22rem);
+  }
+
+  #about .about-summary,
+  #about .about-list {
+    max-width: 100%;
+  }
+
+  .about-actions {
+    margin-top: 1.1rem;
   }
 }
 
