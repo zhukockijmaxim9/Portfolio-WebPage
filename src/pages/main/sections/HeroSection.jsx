@@ -1,4 +1,5 @@
 ﻿import { useCallback, useMemo, useState } from "react";
+import LightPillar from "../../../shared/graphics/LightPillar/LightPillar";
 import SplitText from "../../../shared/animation/SplitText/SplitText";
 import Navigation from "../../../shared/ui/Navigation/Navigation";
 
@@ -56,6 +57,24 @@ function HeroSection() {
 
   return (
     <section className="hero" id="home">
+      <div className="hero-pillar-bg" aria-hidden="true">
+        <LightPillar
+          topColor="#5227FF"
+          bottomColor="#b2ff9f"
+          backgroundColor="#000000"
+          intensity={0.75}
+          rotationSpeed={0.1}
+          glowAmount={0.0017}
+          pillarWidth={7}
+          pillarHeight={0.6}
+          noiseIntensity={0.5}
+          pillarRotation={50}
+          interactive={false}
+          mixBlendMode="normal"
+          quality="high"
+        />
+      </div>
+
       <Navigation />
 
       <div className="hero-content container">
