@@ -1,6 +1,6 @@
 ﻿function WorkflowSection({ workflowSteps }) {
   return (
-    <section className="panel reveal" id="workflow" data-animate>
+    <section className="panel" id="workflow">
       <h2>Как я работаю</h2>
       <ol className="workflow-list">
         {workflowSteps.map((step) => (

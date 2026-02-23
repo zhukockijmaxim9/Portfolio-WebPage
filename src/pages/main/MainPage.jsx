@@ -3,7 +3,6 @@ import { automationItems } from "./content/automationItems";
 import { projects } from "./content/projects";
 import { stackCards } from "./content/stackCards";
 import { workflowSteps } from "./content/workflowSteps";
-import useRevealOnScroll from "./hooks/useRevealOnScroll";
 import AboutSection from "./sections/AboutSection";
 import AutomationSection from "./sections/AutomationSection";
 import ContactSection from "./sections/ContactSection";
@@ -14,8 +13,6 @@ import WorkflowSection from "./sections/WorkflowSection";
 import "./styles/index.scss";
 
 function MainPage() {
-  useRevealOnScroll();
-
   return (
     <div className="portfolio-page">
       <div className="page-pillar-bg" aria-hidden="true">
