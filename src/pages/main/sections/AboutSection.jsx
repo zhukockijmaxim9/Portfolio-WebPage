@@ -12,8 +12,8 @@ function AboutSection() {
           <h3 className="about-name">Максим</h3>
           <p className="about-role">React Developer | AI Automation</p>
           <p className="about-summary">
-            Разрабатываю SPA на React с фокусом на понятный UX и чистую frontend-архитектуру. Интегрирую AI-сервисы
-            в продуктовые сценарии, а backend-опыт на Go и microservices помогает строить целостные системы. Сейчас
+            Разрабатываю SPA на React с фокусом на понятный UX и чистую frontend-архитектуру. Интегрирую AI-сервисы в
+            продуктовые сценарии, а backend-опыт на Go и microservices помогает строить целостные системы. Сейчас
             усиливаю направление AI automation для практических бизнес-задач.
           </p>
           <ul className="about-list">
