@@ -1,9 +1,12 @@
-﻿// Page-level layout wrappers
+// Page-level layout wrappers
 .portfolio-page {
   position: relative;
   min-height: 100svh;
   background: var(--app-background);
   color: var(--app-text);
+  --section-gap: 10px;
+  --section-outline: rgba(161, 230, 255, 0.45);
+  --section-inner-outline: rgba(120, 190, 255, 0.32);
 }
 
 .hero {
@@ -25,5 +28,5 @@
   margin-top: 0;
   padding-bottom: 4rem;
   display: grid;
-  gap: 1.05rem;
+  gap: var(--section-gap);
 }

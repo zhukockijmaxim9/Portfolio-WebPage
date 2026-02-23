@@ -2,7 +2,7 @@
 
 function AboutSection() {
   return (
-    <section className="panel" id="about">
+    <section className="panel section section--about" id="about">
       <h2>Обо мне как о разработчике</h2>
       <div className="about-layout">
         <figure className="about-photo-wrap">

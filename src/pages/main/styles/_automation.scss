@@ -1,14 +1,16 @@
-﻿@use "./tokens" as *;
+@use "./tokens" as *;
 
-.automation-grid {
-  margin-top: 1rem;
-  display: grid;
-  gap: 0.64rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.section--automation {
+  .automation-grid {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.64rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
-  span {
-    padding: 0.74rem 0.82rem;
-    border: 1px solid var(--layout-border);
-    border-radius: $radius-sm;
+    span {
+      padding: 0.74rem 0.82rem;
+      border: 1px solid var(--layout-border);
+      border-radius: $radius-sm;
+    }
   }
 }

@@ -1,6 +1,6 @@
 ﻿function ContactSection() {
   return (
-    <section className="panel" id="contact">
+    <section className="panel section section--contact" id="contact">
       <h2>Связаться</h2>
       <p>Открыт к задачам по React, AI-интеграциям и автоматизации процессов в веб-продуктах.</p>
       <div className="contact-row">

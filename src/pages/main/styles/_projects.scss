@@ -1,32 +1,34 @@
-﻿@use "./tokens" as *;
+@use "./tokens" as *;
 
-.projects-grid {
-  margin-top: 1rem;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.9rem;
-}
-
-.project-card {
-  padding: 1rem;
-  border: 1px solid var(--layout-border);
-  border-radius: $radius-md;
-
-  .project-badge {
-    display: inline-flex;
-    padding: 0.22rem 0.58rem;
-    border: 1px solid var(--layout-border);
-    border-radius: $radius-sm;
-  }
-
-  h3 {
-    margin: 0.8rem 0 0;
-  }
-
-  ul {
-    margin: 0.78rem 0 0;
-    padding-left: 1.05rem;
+.section--projects {
+  .projects-grid {
+    margin-top: 1rem;
     display: grid;
-    gap: 0.5rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+
+  .project-card {
+    padding: 1rem;
+    border: 1px solid var(--layout-border);
+    border-radius: $radius-md;
+
+    .project-badge {
+      display: inline-flex;
+      padding: 0.22rem 0.58rem;
+      border: 1px solid var(--layout-border);
+      border-radius: $radius-sm;
+    }
+
+    h3 {
+      margin: 0.8rem 0 0;
+    }
+
+    ul {
+      margin: 0.78rem 0 0;
+      padding-left: 1.05rem;
+      display: grid;
+      gap: 0.5rem;
+    }
   }
 }

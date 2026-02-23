@@ -1,15 +1,17 @@
-﻿@use "./tokens" as *;
+@use "./tokens" as *;
 
-.workflow-list {
-  margin: 1rem 0 0;
-  padding-left: 0;
-  list-style: none;
-  display: grid;
-  gap: 0.6rem;
+.section--workflow {
+  .workflow-list {
+    margin: 1rem 0 0;
+    padding-left: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.6rem;
 
-  li {
-    padding: 0.7rem 0.78rem;
-    border: 1px solid var(--layout-border);
-    border-radius: $radius-sm;
+    li {
+      padding: 0.7rem 0.78rem;
+      border: 1px solid var(--layout-border);
+      border-radius: $radius-sm;
+    }
   }
 }

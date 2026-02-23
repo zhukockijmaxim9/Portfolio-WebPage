@@ -16,7 +16,7 @@ function MainPage() {
     <div className="portfolio-page">
       <HeroSection />
 
-      <main className="main-content">
+      <main className="main-content main-content--workspace">
         <AboutSection />
         <StackSection stackCards={stackCards} />
         <ProjectsSection projects={projects} />

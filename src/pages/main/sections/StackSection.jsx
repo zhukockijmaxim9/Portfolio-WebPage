@@ -1,6 +1,6 @@
 ﻿function StackSection({ stackCards }) {
   return (
-    <section className="panel" id="stack">
+    <section className="panel section section--stack" id="stack">
       <div className="section-head">
         <h2>Технологический стек</h2>
         <span className="head-note">Приоритет: frontend + AI integration</span>

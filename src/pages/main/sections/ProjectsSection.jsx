@@ -1,6 +1,6 @@
 ﻿function ProjectsSection({ projects }) {
   return (
-    <section className="panel" id="projects">
+    <section className="panel section section--projects" id="projects">
       <h2>Проекты</h2>
       <div className="projects-grid">
         {projects.map((project) => (

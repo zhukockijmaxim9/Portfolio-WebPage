@@ -1,15 +1,17 @@
-﻿@use "./tokens" as *;
+@use "./tokens" as *;
 
-.contact-row {
-  margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.64rem;
+.section--contact {
+  .contact-row {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.64rem;
 
-  a {
-    padding: 0.52rem 0.72rem;
-    text-decoration: none;
-    border: 1px solid var(--layout-border);
-    border-radius: $radius-sm;
+    a {
+      padding: 0.52rem 0.72rem;
+      text-decoration: none;
+      border: 1px solid var(--layout-border);
+      border-radius: $radius-sm;
+    }
   }
 }
