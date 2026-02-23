@@ -3,9 +3,10 @@ import MainPage from "../pages/main/MainPage";
 
 function AppRouter() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="*" element={<MainPage />} />
       </Routes>
     </BrowserRouter>
   );
