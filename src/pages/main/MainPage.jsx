@@ -22,6 +22,7 @@ function MainPage() {
         <LightPillar
           topColor="#5227FF"
           bottomColor="#b2ff9f"
+          backgroundColor="#000000"
           intensity={0.75}
           rotationSpeed={0.1}
           glowAmount={0.0017}
@@ -30,7 +31,7 @@ function MainPage() {
           noiseIntensity={0.5}
           pillarRotation={50}
           interactive={false}
-          mixBlendMode="screen"
+          mixBlendMode="normal"
           quality="high"
         />
       </div>

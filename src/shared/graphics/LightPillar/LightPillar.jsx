@@ -5,6 +5,7 @@ import "./LightPillar.css";
 const LightPillar = ({
   topColor = "#5227FF",
   bottomColor = "#FF9FFC",
+  backgroundColor = "#000000",
   intensity = 1.0,
   rotationSpeed = 0.3,
   interactive = false,
@@ -13,7 +14,7 @@ const LightPillar = ({
   pillarWidth = 3.0,
   pillarHeight = 0.4,
   noiseIntensity = 0.5,
-  mixBlendMode = "screen",
+  mixBlendMode = "normal",
   pillarRotation = 0,
   quality = "high",
 }) => {
@@ -110,6 +111,7 @@ const LightPillar = ({
       uniform vec2 uMouse;
       uniform vec3 uTopColor;
       uniform vec3 uBottomColor;
+      uniform vec3 uBackgroundColor;
       uniform float uIntensity;
       uniform bool uInteractive;
       uniform float uGlowAmount;
@@ -181,7 +183,11 @@ const LightPillar = ({
         
         col -= fract(sin(dot(gl_FragCoord.xy, vec2(12.9898, 78.233))) * 43758.5453) / 15.0 * uNoiseIntensity;
         
-        gl_FragColor = vec4(col * uIntensity, 1.0);
+        vec3 glowColor = col * uIntensity;
+        float glowAlpha = clamp(max(max(glowColor.r, glowColor.g), glowColor.b), 0.0, 1.0);
+        vec3 glowTint = glowAlpha > 0.0 ? glowColor / glowAlpha : vec3(0.0);
+        vec3 finalColor = mix(uBackgroundColor, glowTint, glowAlpha);
+        gl_FragColor = vec4(finalColor, 1.0);
       }
     `;
 
@@ -198,6 +204,7 @@ const LightPillar = ({
         uMouse: { value: mouseRef.current },
         uTopColor: { value: parseColor(topColor) },
         uBottomColor: { value: parseColor(bottomColor) },
+        uBackgroundColor: { value: parseColor(backgroundColor) },
         uIntensity: { value: intensity },
         uInteractive: { value: interactive },
         uGlowAmount: { value: glowAmount },
@@ -314,6 +321,7 @@ const LightPillar = ({
   }, [
     topColor,
     bottomColor,
+    backgroundColor,
     intensity,
     rotationSpeed,
     interactive,
