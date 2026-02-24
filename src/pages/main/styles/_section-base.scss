@@ -125,10 +125,10 @@
   --z-visual-fr: 1.2fr;
 }
 
-.main-content--workspace .section {
-  border: 1px dashed var(--section-outline);
-}
+// .main-content--workspace .section {
+//   border: 1px dashed var(--section-outline);
+// }
 
-.main-content--workspace .section :is([class], h2, h3, p, ul, ol, li, article, figure, a, span, img) {
-  outline: 1px dashed var(--section-inner-outline);
-}
+// .main-content--workspace .section :is([class], h2, h3, p, ul, ol, li, article, figure, a, span, img) {
+//   outline: 1px dashed var(--section-inner-outline);
+// }

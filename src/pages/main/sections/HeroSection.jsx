@@ -61,7 +61,7 @@ function HeroSection() {
         <LightPillar
           topColor="#5227FF"
           bottomColor="#b2ff9f"
-          backgroundColor="#000000"
+          backgroundColor="#0b222d"
           intensity={0.75}
           rotationSpeed={0.1}
           glowAmount={0.0017}

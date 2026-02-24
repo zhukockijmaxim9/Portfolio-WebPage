@@ -1,8 +1,10 @@
-﻿import { useEffect } from "react";
+import { useEffect } from "react";
+
+const revealRatio = 0.1;
 
 const defaultObserverOptions = {
-  threshold: 0.18,
-  rootMargin: "0px 0px -8% 0px",
+  threshold: [0, revealRatio],
+  rootMargin: "0px 0px -10% 0px",
 };
 
 function useRevealOnScroll(selector = "[data-animate]", options = defaultObserverOptions) {
@@ -19,10 +21,8 @@ function useRevealOnScroll(selector = "[data-animate]", options = defaultObserve
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
+        const isVisible = entry.isIntersecting && entry.intersectionRatio >= revealRatio;
+        entry.target.classList.toggle("is-visible", isVisible);
       });
     }, options);
 
