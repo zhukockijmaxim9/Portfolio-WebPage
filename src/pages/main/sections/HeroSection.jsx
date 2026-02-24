@@ -32,7 +32,7 @@ function HeroSection() {
         to: { opacity: 1, y: 0 },
       },
     ],
-    []
+    [],
   );
 
   const heroBottomSteps = useMemo(
@@ -52,13 +52,13 @@ function HeroSection() {
         to: { opacity: 1, y: 0 },
       },
     ],
-    []
+    [],
   );
 
   return (
     <section className="hero" id="home">
       <div className="hero-pillar-bg" aria-hidden="true">
-        <LightPillar
+        {/* <LightPillar
           topColor="#5227FF"
           bottomColor="#b2ff9f"
           backgroundColor="#000000"
@@ -72,7 +72,7 @@ function HeroSection() {
           interactive={false}
           mixBlendMode="normal"
           quality="high"
-        />
+        /> */}
       </div>
 
       <Navigation />

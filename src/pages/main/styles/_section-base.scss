@@ -42,19 +42,6 @@
   border: 1px dashed var(--section-outline);
 }
 
-.main-content--workspace .section :is(
-    [class],
-    h2,
-    h3,
-    p,
-    ul,
-    ol,
-    li,
-    article,
-    figure,
-    a,
-    span,
-    img
-  ) {
+.main-content--workspace .section :is([class], h2, h3, p, ul, ol, li, article, figure, a, span, img) {
   outline: 1px dashed var(--section-inner-outline);
 }
