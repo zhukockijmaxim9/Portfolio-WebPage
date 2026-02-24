@@ -1,4 +1,5 @@
 ﻿import aboutPhoto from "../../../images/Moskow.jpg";
+import Button from "../../../components/Button/Button";
 
 function AboutSection() {
   return (
@@ -23,7 +24,7 @@ function AboutSection() {
             <li>Работа с microservices</li>
           </ul>
           <div className="about-actions">
-            <a
+            <Button
               href="https://github.com/zhukockijmaxim9"
               className="about-github-link"
               target="_blank"
@@ -34,7 +35,7 @@ function AboutSection() {
                 <path d="M8 0.2a7.8 7.8 0 0 0-2.5 15.2c0.4 0.1 0.5-0.2 0.5-0.4v-1.5c-2.1 0.5-2.5-0.9-2.5-0.9-0.4-0.8-0.8-1-0.8-1-0.7-0.4 0-0.4 0-0.4 0.7 0 1.1 0.8 1.1 0.8 0.7 1.1 1.7 0.8 2.1 0.6 0.1-0.5 0.3-0.8 0.5-1-1.7-0.2-3.5-0.9-3.5-3.9 0-0.9 0.3-1.6 0.8-2.2 0-0.2-0.3-1 0.1-2.1 0 0 0.7-0.2 2.2 0.8a7.5 7.5 0 0 1 4.1 0c1.5-1 2.2-0.8 2.2-0.8 0.4 1.1 0.2 1.9 0.1 2.1 0.5 0.6 0.8 1.4 0.8 2.2 0 3-1.8 3.7-3.5 3.9 0.3 0.2 0.5 0.7 0.5 1.4v2c0 0.2 0.1 0.5 0.5 0.4A7.8 7.8 0 0 0 8 0.2z" />
               </svg>
               <span>GitHub</span>
-            </a>
+            </Button>
           </div>
         </div>
       </div>

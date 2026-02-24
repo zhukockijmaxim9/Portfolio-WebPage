@@ -5,14 +5,14 @@
   }
 
   .about-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 35fr) minmax(0, 65fr);
-    align-items: start;
+    display: flex;
+    align-items: flex-start;
     gap: clamp(1.25rem, 3vw, 2.5rem);
   }
 
   .about-photo-wrap {
     margin: 0;
+    flex: 0 1 35%;
     width: 100%;
     max-width: clamp(20rem, 30vw, 23.75rem);
   }
@@ -28,6 +28,8 @@
   }
 
   .about-content {
+    flex: 1 1 65%;
+    min-width: 0;
     max-width: 48rem;
   }
 
@@ -58,7 +60,8 @@
     margin: 1.08rem 0 0;
     padding: 0;
     list-style: none;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 0.62rem;
     max-width: 46ch;
 
@@ -86,33 +89,14 @@
   }
 
   .about-github-link {
-    display: inline-flex;
-    align-items: center;
     gap: 0.44rem;
-    padding: 0.5rem 0.82rem;
-    border: 1px solid var(--layout-border);
-    border-radius: 999px;
-    text-decoration: none;
-    font-size: 0.92rem;
-    font-weight: 620;
-    color: rgba(242, 247, 255, 0.9);
-    background: rgba(255, 255, 255, 0.03);
-    transition:
-      background 180ms ease,
-      border-color 180ms ease,
-      transform 180ms ease;
+    min-width: 0;
 
     svg {
       width: 0.95rem;
       height: 0.95rem;
       fill: currentColor;
       opacity: 0.88;
-    }
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: var(--layout-border-strong);
-      transform: scale(1.02);
     }
   }
 }

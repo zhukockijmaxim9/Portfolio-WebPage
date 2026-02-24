@@ -3,11 +3,13 @@
 .section--automation {
   .automation-grid {
     margin-top: 1rem;
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     gap: 0.64rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     span {
+      flex: 1 1 calc(50% - 0.32rem);
+      min-width: 0;
       padding: 0.74rem 0.82rem;
       border: 1px solid var(--layout-border);
       border-radius: $radius-sm;

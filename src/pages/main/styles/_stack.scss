@@ -3,12 +3,14 @@
 .section--stack {
   .stack-grid {
     margin-top: 1rem;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 0.9rem;
   }
 
   .stack-card {
+    flex: 1 1 calc(50% - 0.45rem);
+    min-width: 0;
     padding: 0.95rem;
     border: 1px solid var(--layout-border);
     border-radius: $radius-md;

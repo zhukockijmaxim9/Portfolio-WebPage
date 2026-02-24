@@ -3,12 +3,14 @@
 .section--projects {
   .projects-grid {
     margin-top: 1rem;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 0.9rem;
   }
 
   .project-card {
+    flex: 1 1 calc((100% - 1.8rem) / 3);
+    min-width: 0;
     padding: 1rem;
     border: 1px solid var(--layout-border);
     border-radius: $radius-md;
@@ -27,7 +29,8 @@
     ul {
       margin: 0.78rem 0 0;
       padding-left: 1.05rem;
-      display: grid;
+      display: flex;
+      flex-direction: column;
       gap: 0.5rem;
     }
   }

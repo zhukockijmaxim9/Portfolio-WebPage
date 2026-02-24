@@ -18,7 +18,9 @@
   }
 
   .section--projects .projects-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    .project-card {
+      flex-basis: calc(50% - 0.45rem);
+    }
   }
 }
 
@@ -46,7 +48,7 @@
   .section--stack .stack-grid,
   .section--projects .projects-grid,
   .section--automation .automation-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
   .section--about .about-layout {
@@ -92,7 +94,7 @@
   }
 
   .section--about .about-layout {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 1.35rem;
   }
 

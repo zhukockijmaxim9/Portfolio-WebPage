@@ -27,6 +27,7 @@
 .main-content {
   margin-top: 0;
   padding-bottom: 4rem;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var(--section-gap);
 }
