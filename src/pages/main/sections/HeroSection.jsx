@@ -58,7 +58,7 @@ function HeroSection() {
   return (
     <section className="hero" id="home">
       <div className="hero-pillar-bg" aria-hidden="true">
-        {/* <LightPillar
+        <LightPillar
           topColor="#5227FF"
           bottomColor="#b2ff9f"
           backgroundColor="#000000"
@@ -71,8 +71,8 @@ function HeroSection() {
           pillarRotation={50}
           interactive={false}
           mixBlendMode="normal"
-          quality="high"
-        /> */}
+          quality="low"
+        />
       </div>
 
       <Navigation />
