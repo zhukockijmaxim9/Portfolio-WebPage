@@ -4,12 +4,14 @@ import Button from "../../../components/Button/Button";
 function AboutSection() {
   return (
     <section className="panel section section--about" id="about">
-      <h2>Обо мне как о разработчике</h2>
+      <h2 className="about-title reveal" data-animate>
+        Обо мне как о разработчике
+      </h2>
       <div className="about-layout">
-        <figure className="about-photo-wrap">
+        <figure className="about-photo-wrap reveal reveal--delay-1" data-animate>
           <img className="about-photo" src={aboutPhoto} alt="Максим, React Developer" loading="lazy" />
         </figure>
-        <div className="about-content">
+        <div className="about-content reveal reveal--delay-2" data-animate>
           <h3 className="about-name">Максим</h3>
           <p className="about-role">React Developer | AI Automation</p>
           <p className="about-summary">

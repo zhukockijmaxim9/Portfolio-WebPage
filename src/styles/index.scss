@@ -15,10 +15,19 @@ $mobile-breakpoint: 768px;
 
 :root {
   color-scheme: dark;
-  --app-background: #{$page-bg};
+  --color-primary-blue: #0066ff;
+  --color-primary-blue-rgb: 0, 102, 255;
+  --color-primary-green: #00ff99;
+  --color-primary-green-rgb: 0, 255, 153;
+  --bg-app: #{$page-bg};
+  --bg-surface: #0d1117;
+  --bg-surface-alt: #111827;
+  --section-padding: 120px;
+  --section-gap: clamp(3rem, 8vw, var(--section-padding));
+  --app-background: var(--bg-app);
   --app-text: #{$text-main};
-  --layout-border: rgba(120, 190, 255, 0.45);
-  --layout-border-strong: rgba(120, 190, 255, 0.7);
+  --layout-border: rgba(var(--color-primary-blue-rgb), 0.45);
+  --layout-border-strong: rgba(var(--color-primary-blue-rgb), 0.7);
 }
 
 *,
@@ -65,6 +74,11 @@ a {
 }
 
 @media (max-width: $mobile-breakpoint) {
+  :root {
+    --section-padding: 72px;
+    --section-gap: clamp(2.4rem, 10vw, var(--section-padding));
+  }
+
   html {
     font-size: 14px;
   }

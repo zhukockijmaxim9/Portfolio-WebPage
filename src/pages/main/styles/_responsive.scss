@@ -94,7 +94,7 @@
   }
 
   .section--about .about-layout {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 1.35rem;
   }
 
@@ -103,13 +103,23 @@
     max-width: min(100%, 22rem);
   }
 
+  .section--about .about-content {
+    text-align: center;
+    margin: 0 auto;
+  }
+
   .section--about .about-summary,
   .section--about .about-list {
     max-width: 100%;
   }
 
+  .section--about .about-list {
+    justify-content: center;
+  }
+
   .section--about .about-actions {
     margin-top: 1.1rem;
+    justify-content: center;
   }
 }
 

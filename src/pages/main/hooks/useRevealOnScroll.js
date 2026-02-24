@@ -12,6 +12,11 @@ function useRevealOnScroll(selector = "[data-animate]", options = defaultObserve
       return undefined;
     }
 
+    if (!("IntersectionObserver" in window)) {
+      elements.forEach((element) => element.classList.add("is-visible"));
+      return undefined;
+    }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {

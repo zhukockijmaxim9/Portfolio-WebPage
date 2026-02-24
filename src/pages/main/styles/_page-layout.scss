@@ -4,7 +4,6 @@
   min-height: 100svh;
   background: var(--app-background);
   color: var(--app-text);
-  --section-gap: 10px;
   --section-outline: rgba(161, 230, 255, 0.45);
   --section-inner-outline: rgba(120, 190, 255, 0.32);
 }
@@ -26,7 +25,7 @@
 
 .main-content {
   margin-top: 0;
-  padding-bottom: 4rem;
+  padding-bottom: var(--section-gap);
   display: flex;
   flex-direction: column;
   gap: var(--section-gap);

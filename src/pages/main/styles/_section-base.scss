@@ -3,7 +3,7 @@
 .panel {
   padding: clamp(1.15rem, 2.8vw, 2rem);
   border-radius: 3rem;
-  background: black;
+  background: var(--bg-surface);
 
   h2 {
     margin: 0;
