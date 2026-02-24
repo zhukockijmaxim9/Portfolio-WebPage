@@ -3,7 +3,6 @@
   overflow: visible;
   isolation: isolate;
   border-radius: 0;
-  background: var(--bg-surface);
 
   &::before {
     content: "";
@@ -13,12 +12,6 @@
     width: min(100%, 80rem);
     height: 400px;
     transform: translateX(-50%);
-    background: linear-gradient(
-      180deg,
-      rgba(var(--color-primary-blue-rgb), 0.15) 0%,
-      rgba(var(--color-primary-green-rgb), 0.15) 100%
-    );
-    filter: blur(120px);
     pointer-events: none;
     z-index: 0;
   }
