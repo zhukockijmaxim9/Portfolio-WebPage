@@ -1,17 +1,8 @@
-@use "./tokens" as *;
-
 .section--contact {
-  .contact-row {
-    margin-top: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.64rem;
+  --z-content-fr: 1fr;
+  --z-visual-fr: 1fr;
 
-    a {
-      padding: 0.52rem 0.72rem;
-      text-decoration: none;
-      border: 1px solid var(--layout-border);
-      border-radius: $radius-sm;
-    }
+  .z-section__placeholder--visual {
+    min-height: clamp(10rem, 22vw, 14rem);
   }
 }

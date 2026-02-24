@@ -1,24 +1,12 @@
-﻿function StackSection({ stackCards }) {
+function StackSection() {
   return (
-    <section className="panel section section--stack" id="stack">
-      <div className="section-head">
-        <h2>Технологический стек</h2>
-        <span className="head-note">Приоритет: frontend + AI integration</span>
+    <section className="panel section section--stack z-section z-section--reverse" id="stack">
+      <div className="z-section__content reveal" data-animate>
+        <h2 className="z-section__title">Технологический стек</h2>
+        <p className="z-section__placeholder z-section__placeholder--text">Текст-заглушка для описания секции.</p>
       </div>
-      <div className="stack-grid">
-        {stackCards.map((card) => (
-          <article key={card.title} className="stack-card">
-            <h3>{card.title}</h3>
-            <div className="stack-items">
-              {card.items.map((item) => (
-                <span className="skill-chip" key={item.name} title={item.level}>
-                  <span>{item.name}</span>
-                  <small>{item.level}</small>
-                </span>
-              ))}
-            </div>
-          </article>
-        ))}
+      <div className="z-section__visual reveal reveal--delay-1" data-animate>
+        <div className="z-section__placeholder z-section__placeholder--visual">Визуальный блок-заглушка</div>
       </div>
     </section>
   );

@@ -1,7 +1,3 @@
-import { automationItems } from "./content/automationItems";
-import { projects } from "./content/projects";
-import { stackCards } from "./content/stackCards";
-import { workflowSteps } from "./content/workflowSteps";
 import useRevealOnScroll from "./hooks/useRevealOnScroll";
 import AboutSection from "./sections/AboutSection";
 import AutomationSection from "./sections/AutomationSection";
@@ -21,10 +17,10 @@ function MainPage() {
 
       <main className="main-content main-content--workspace">
         <AboutSection />
-        <StackSection stackCards={stackCards} />
-        <ProjectsSection projects={projects} />
-        <AutomationSection automationItems={automationItems} />
-        <WorkflowSection workflowSteps={workflowSteps} />
+        <StackSection />
+        <ProjectsSection />
+        <AutomationSection />
+        <WorkflowSection />
         <ContactSection />
       </main>
     </div>

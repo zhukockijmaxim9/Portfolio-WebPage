@@ -1,43 +1,8 @@
-@use "./tokens" as *;
-
 .section--stack {
-  .stack-grid {
-    margin-top: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.9rem;
-  }
+  --z-content-fr: 1fr;
+  --z-visual-fr: 1fr;
 
-  .stack-card {
-    flex: 1 1 calc(50% - 0.45rem);
-    min-width: 0;
-    padding: 0.95rem;
-    border: 1px solid var(--layout-border);
-    border-radius: $radius-md;
-
-    h3 {
-      margin: 0;
-    }
-  }
-
-  .stack-items {
-    margin-top: 0.72rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .skill-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.44rem;
-    padding: 0.35rem 0.7rem;
-    border: 1px solid var(--layout-border);
-    border-radius: $radius-sm;
-
-    small {
-      display: inline-block;
-      opacity: 0.8;
-    }
+  .z-section__placeholder--visual {
+    min-height: clamp(11.5rem, 26vw, 17rem);
   }
 }

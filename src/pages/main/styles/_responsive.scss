@@ -1,4 +1,4 @@
-﻿@use "./tokens" as *;
+@use "./tokens" as *;
 
 @media (max-width: $bp-desktop-small) {
   .hero {
@@ -15,12 +15,6 @@
 
   .hero-line {
     font-size: 1.16rem;
-  }
-
-  .section--projects .projects-grid {
-    .project-card {
-      flex-basis: calc(50% - 0.45rem);
-    }
   }
 }
 
@@ -45,14 +39,14 @@
     font-size: 1.04rem;
   }
 
-  .section--stack .stack-grid,
-  .section--projects .projects-grid,
-  .section--automation .automation-grid {
-    flex-direction: column;
+  .z-section {
+    grid-template-columns: 1fr;
+    gap: clamp(1rem, 3vw, 1.6rem);
   }
 
-  .section--about .about-layout {
-    gap: 1.35rem;
+  .z-section--reverse .z-section__content,
+  .z-section--reverse .z-section__visual {
+    order: initial;
   }
 }
 
@@ -93,32 +87,15 @@
     margin-top: 0;
   }
 
-  .section--about .about-layout {
-    grid-template-columns: 1fr;
-    gap: 1.35rem;
-  }
-
-  .section--about .about-photo-wrap {
-    margin: 0 auto;
-    max-width: min(100%, 22rem);
-  }
-
-  .section--about .about-content {
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  .section--about .about-summary,
-  .section--about .about-list {
+  .z-section__title {
     max-width: 100%;
   }
 
-  .section--about .about-list {
-    justify-content: center;
+  .z-section__placeholder--text {
+    max-width: 100%;
   }
 
-  .section--about .about-actions {
-    margin-top: 1.1rem;
+  .section--about .about-photo-wrap {
     justify-content: center;
   }
 }

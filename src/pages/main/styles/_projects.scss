@@ -1,37 +1,8 @@
-@use "./tokens" as *;
-
 .section--projects {
-  .projects-grid {
-    margin-top: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.9rem;
-  }
+  --z-content-fr: 1fr;
+  --z-visual-fr: 1fr;
 
-  .project-card {
-    flex: 1 1 calc((100% - 1.8rem) / 3);
-    min-width: 0;
-    padding: 1rem;
-    border: 1px solid var(--layout-border);
-    border-radius: $radius-md;
-
-    .project-badge {
-      display: inline-flex;
-      padding: 0.22rem 0.58rem;
-      border: 1px solid var(--layout-border);
-      border-radius: $radius-sm;
-    }
-
-    h3 {
-      margin: 0.8rem 0 0;
-    }
-
-    ul {
-      margin: 0.78rem 0 0;
-      padding-left: 1.05rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
+  .z-section__placeholder--visual {
+    min-height: clamp(12rem, 27vw, 18rem);
   }
 }

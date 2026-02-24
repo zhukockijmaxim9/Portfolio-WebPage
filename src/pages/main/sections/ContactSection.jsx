@@ -1,11 +1,12 @@
-﻿function ContactSection() {
+function ContactSection() {
   return (
-    <section className="panel section section--contact" id="contact">
-      <h2>Связаться</h2>
-      <p>Открыт к задачам по React, AI-интеграциям и автоматизации процессов в веб-продуктах.</p>
-      <div className="contact-row">
-        <a href="mailto:your.email@example.com">your.email@example.com</a>
-        <a href="https://github.com/your-username">github.com/your-username</a>
+    <section className="panel section section--contact z-section z-section--reverse" id="contact">
+      <div className="z-section__content reveal" data-animate>
+        <h2 className="z-section__title">Связаться</h2>
+        <p className="z-section__placeholder z-section__placeholder--text">Текст-заглушка для описания секции.</p>
+      </div>
+      <div className="z-section__visual reveal reveal--delay-1" data-animate>
+        <div className="z-section__placeholder z-section__placeholder--visual">Визуальный блок-заглушка</div>
       </div>
     </section>
   );

@@ -1,18 +1,8 @@
-@use "./tokens" as *;
-
 .section--automation {
-  .automation-grid {
-    margin-top: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.64rem;
+  --z-content-fr: 1fr;
+  --z-visual-fr: 1fr;
 
-    span {
-      flex: 1 1 calc(50% - 0.32rem);
-      min-width: 0;
-      padding: 0.74rem 0.82rem;
-      border: 1px solid var(--layout-border);
-      border-radius: $radius-sm;
-    }
+  .z-section__placeholder--visual {
+    min-height: clamp(12.5rem, 27vw, 18.5rem);
   }
 }

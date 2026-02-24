@@ -1,17 +1,11 @@
 @use "./tokens" as *;
 
 .panel {
-  padding: clamp(1.15rem, 2.8vw, 2rem);
-  border-radius: 3rem;
+  padding: clamp(1.2rem, 3vw, 2.4rem);
+  border-radius: clamp(1.1rem, 2.4vw, 1.8rem);
 
   h2 {
     margin: 0;
-  }
-
-  p {
-    margin: 0.9rem 0 0;
-    max-width: 74ch;
-    line-height: 1.6;
   }
 }
 
@@ -23,18 +17,96 @@
   position: relative;
 }
 
-.section-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.8rem;
-  flex-wrap: wrap;
+.z-section {
+  --z-content-fr: 1fr;
+  --z-visual-fr: 1fr;
 
-  .head-note {
-    padding: 0.28rem 0.64rem;
-    border: 1px solid var(--layout-border);
-    border-radius: $radius-sm;
+  display: grid;
+  grid-template-columns: minmax(0, var(--z-content-fr)) minmax(0, var(--z-visual-fr));
+  align-items: center;
+  gap: clamp(1.25rem, 4vw, 4.5rem);
+}
+
+.z-section--reverse {
+  .z-section__content {
+    order: 2;
   }
+
+  .z-section__visual {
+    order: 1;
+  }
+}
+
+.z-section__content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.7rem, 1.6vw, 1.1rem);
+}
+
+.z-section__visual {
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.z-section__title {
+  margin: 0;
+  max-width: 20ch;
+  font-size: clamp(1.75rem, 3.8vw, 3.05rem);
+  line-height: 1.08;
+  font-weight: 760;
+  letter-spacing: -0.015em;
+}
+
+.z-section__placeholder {
+  margin: 0;
+}
+
+.z-section__placeholder--text {
+  max-width: 36ch;
+  font-size: clamp(1rem, 1.4vw, 1.14rem);
+  line-height: 1.62;
+  color: rgba(242, 247, 255, 0.78);
+}
+
+.z-section__placeholder--visual {
+  width: 100%;
+  min-height: clamp(12rem, 28vw, 19rem);
+  padding: clamp(0.9rem, 2vw, 1.4rem);
+  border: 1px dashed rgba(var(--color-primary-blue-rgb), 0.65);
+  border-radius: clamp(0.9rem, 2vw, 1.4rem);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.4;
+  color: rgba(242, 247, 255, 0.68);
+  background:
+    radial-gradient(circle at 18% 20%, rgba(var(--color-primary-blue-rgb), 0.2) 0%, rgba(var(--color-primary-blue-rgb), 0) 55%),
+    radial-gradient(circle at 78% 82%, rgba(var(--color-primary-green-rgb), 0.14) 0%, rgba(var(--color-primary-green-rgb), 0) 62%),
+    rgba(255, 255, 255, 0.03);
+}
+
+.z-section--ratio-60-40 {
+  --z-content-fr: 1.2fr;
+  --z-visual-fr: 0.8fr;
+}
+
+.z-section--ratio-55-45 {
+  --z-content-fr: 1.1fr;
+  --z-visual-fr: 0.9fr;
+}
+
+.z-section--ratio-45-55 {
+  --z-content-fr: 0.9fr;
+  --z-visual-fr: 1.1fr;
+}
+
+.z-section--ratio-40-60 {
+  --z-content-fr: 0.8fr;
+  --z-visual-fr: 1.2fr;
 }
 
 .main-content--workspace .section {
